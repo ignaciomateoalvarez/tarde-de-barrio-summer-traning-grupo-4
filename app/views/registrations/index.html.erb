@@ -1,0 +1,39 @@
+<div class="contenedor">
+  <nav class="menu">
+   <%= link_to "Sesion"%>
+   <%= link_to "Registro"%>
+ </nav>
+ <hr>
+ <div class= "grid">
+ <div>
+ <%= image_tag("Frame.jpg")%>
+ </div>
+ <section>
+ <h1 class="title">Registro</h1>
+ <%= form_with  do |form| %>
+       <div class="input-group">
+         <%= form.label :name_user, class: 'label'  %>
+         <%= form.text_field :name_user, class: 'input'  %>
+       </div>
+       <div class="input-group">
+         <%= form.label :email_user, class: 'label'  %>
+         <%= form.text_field :email_user, class: 'input'  %>
+       </div>
+       <div class="input-group">
+         <%= form.label :password, class: 'label'%>
+         <%= form.number_field :password, class: 'input'%>
+       </div>
+       <div class="input-group">
+         <%= form.label :password, class: 'label'  %>
+         <%= form.number_field :password, class: 'input' %>
+       </div>
+       <button>Registrarme</button>
+       <div>
+       <br>
+         <%= form.submit%> 
+       </div>
+ <% end %> 
+ </section>
+ </div>
+ </div>
+
