@@ -1,0 +1,51 @@
+<h1>Tarde de Barrio </h1>
+
+<main>
+
+  <section class="section-form">
+    <div class = "div-rectangle">
+      <div class = div-nav>
+        <nav>
+        <%= link_to 'Sesión', '/#', class: 'sesion' %> 
+        <%= link_to 'Registro', '/#', class: 'registro' %> 
+        </nav>
+      </div>
+      <hr>
+
+      <div class = "div-content">
+        <div class = 'div-img'>
+          <%= image_tag("Frame.png") %>
+        </div>
+        
+        <%= form_with class: 'div-form' do |form| %> 
+          <div class="d1">
+            <h2 class ="ingresar">Ingresar a mi cuenta</h2>
+          </div>
+          <div class="d2">
+            <%= form.label :email, class: 'label' %>
+            <%= form.text_field :email, placeholder: 'admin@admin.com', class: 'input-label' %>
+            
+            <%= form.label 'Contraseña', class: 'label' %>
+            <%= form.text_field :password, placeholder: 'password', class: 'input-label' %>
+          </div>
+
+            <div class = "div-checkout"
+              <%= form.check_box :remember_me, class: 'remember-me' %>
+              <%= form.label 'Recordarme', class: 'remember-me-label' %>
+            </div>
+
+            <div class = 'div-links'>
+              <%= form.submit 'Ingresar', class: 'btn-ingresar'%>  
+              <%= link_to 'Olvidé mi contraseña', '/#', class: 'forgot-pw'%> 
+              <div class='google'>
+                <%= image_tag("google_logo.png")%>
+                <%= link_to 'Ingresar con Google', '/#', class: 'ingreso-google'%> 
+              </div>
+            </div>
+          </div>
+          <%end%>
+      </div>
+    </div>  
+  </section>
+
+</main>
