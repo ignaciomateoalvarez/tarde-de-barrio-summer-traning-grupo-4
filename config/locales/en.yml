@@ -31,3 +31,22 @@
 
 en:
   hello: "Hello world"
+  session: 
+    session_: 'Log in'
+    sign_up: 'Sign Up'
+    sign_in_account: 'Log in my account'
+    email: 'Email'
+    pw: 'Password'
+    remember_me: 'Remember me'
+    sign_in: 'Log in'
+    forgot_pw: 'Forgot my password'
+    log_in_google: 'Log in with Google' 
+    
+  register:
+    name: 'User Name'
+    confirm_pw: 'Confirm Password'
+    sign_up: 'Sign up'
+    sign_up_google: 'Sign up with Google'
+
+
+

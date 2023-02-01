@@ -1,0 +1,19 @@
+es:
+  session: 
+    session_: 'Iniciar sesión'
+    sign_up: 'Registro'
+    sign_in_account: 'Ingresar a mi cuenta'
+    email: 'Email'
+    pw: 'Contraseña'
+    remember_me: 'Recordarme'
+    sign_in: 'Ingresar'
+    forgot_pw: 'Olvidé mi contraseña'
+    log_in_google: 'Ingresar con Google' 
+    
+  register:
+    name: 'Nombre de usuario'
+    confirm_pw: 'Confirmar contraseña'
+    sign_up: 'Registrarme'
+    sign_up_google: 'Registrarme con Google'
+
+
