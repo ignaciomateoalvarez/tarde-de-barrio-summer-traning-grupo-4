@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  authenticates_with_sorcery!
   validates :name, :lastname, :email, presence: true
   validates_format_of :name, :lastname, { with: /\A[a-zA-Z]+\z/ }
   validates :email, uniqueness: true
