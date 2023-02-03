@@ -1,7 +1,7 @@
 <div class="contenedor">
   <nav class="menu">
-   <%= link_to "Sesion"%>
-   <%= link_to "Registro"%>
+   <%= link_to "Sesion", root_path%>
+   <%= link_to "Registro", registrations_path%>
  </nav>
  <hr>
  <div class= "grid">
@@ -21,16 +21,20 @@
        </div>
        <div class="input-group">
          <%= form.label :password, class: 'label'%>
-         <%= form.number_field :password, class: 'input'%>
+         <%= form.number_field :password, class: 'input', type: 'password'%>
        </div>
        <div class="input-group">
          <%= form.label :password, class: 'label'  %>
-         <%= form.number_field :password, class: 'input' %>
+         <%= form.number_field :password, class: 'input', type: 'password' %>
        </div>
        <button>Registrarme</button>
        <div>
        <br>
-         <%= form.submit%> 
+       <div class='google'>
+           <%= image_tag("google_logo.png")%>
+             <%= link_to t('session.log_in_google'), '/#', class: 'ingreso-google'%> 
+       </div>
+       <br>
        </div>
  <% end %> 
  </section>
