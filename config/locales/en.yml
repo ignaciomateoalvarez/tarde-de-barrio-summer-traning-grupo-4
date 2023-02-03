@@ -51,6 +51,11 @@ en:
   home:
     title: 'Home Page'
     cerrar_sesion: 'Sign Off'
+
+  user:
+    name: 'Name'
+    surname: 'Surname'
+    email: 'Email'
       
 
 

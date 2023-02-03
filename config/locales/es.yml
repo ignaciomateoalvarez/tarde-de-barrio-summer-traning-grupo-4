@@ -20,3 +20,8 @@ es:
     title: 'Pagina de Inicio'
     cerrar_sesion: 'Cerrar Sesion'
   
+  user:
+    name: 'Nombre'
+    surname: 'Apellido'
+    email: 'Email'
+  
