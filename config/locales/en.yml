@@ -48,5 +48,10 @@ en:
     sign_up: 'Sign up'
     sign_up_google: 'Sign up with Google'
 
+  home:
+    title: 'Home Page'
+    cerrar_sesion: 'Sing Off'
+      
+
 
 
