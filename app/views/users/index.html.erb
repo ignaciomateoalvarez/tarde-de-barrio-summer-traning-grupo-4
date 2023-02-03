@@ -4,29 +4,21 @@
 <div class="contenedor">
  <div class= "grid">
  <section>
-
- <h1 class="title">Home Page</h1>
-   <div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <%= user.name %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-
-
-
-
+ <%== pagy_nav(@pagy) %>
+  
+   <table>
+   <tr>
+     <th>Name</th>
+     <th>Lastname</th>
+     <th>Email</th>
+   </tr>
+ <% @users.each do |user| %>
+   <tr>
+     <td><%= user.name %></td>
+     <td><%= user.lastname %></td>
+     <td><%= user.email %></td>
+     <td>
+   </tr>
+ <% end %>
+ </table>
  </section>
- </div>
- </div>
-
-
-
-
-    
-  <% end %>
-</div>
-
-<%= link_to "New user", new_user_path %>
-<%= link_to "Cerrar sesión" %> 
