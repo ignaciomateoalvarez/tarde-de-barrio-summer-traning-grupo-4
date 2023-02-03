@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy create]
-  
+
+
   # GET /users or /users.json
   def index
-    @pagy, @users = pagy(User, items: 1)
+
+    @filter = UserFilter.new(User.all, filter_params)
+    @pagy, @users = pagy(@filter.call)
+    
   end
 
   # GET /users/1 or /users/1.json
@@ -67,5 +71,11 @@ class UsersController < ApplicationController
   # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation)
+  end
+
+  def filter_params
+    params.fetch(:user_filter, {}).permit(
+      :query
+    )
   end
 end

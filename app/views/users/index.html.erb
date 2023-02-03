@@ -6,6 +6,13 @@
  <section>
  <%== pagy_nav(@pagy) %>
   
+<%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+  <%= form.text_field :query,  value: params[:query] %>
+  <%= form.submit %>
+<% end %>
+
+
+
    <table>
    <tr>
      <th>Name</th>
