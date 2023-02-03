@@ -1,33 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
+<section class="filter-section">
 
-<div class="contenedor">
- <div class= "grid">
- <section>
- <%== pagy_nav(@pagy) %>
-  
-<%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+  <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
   <%= form.text_field :query,  value: params[:query] %>
-  <%= form.submit %>
-<% end %>
+  <%= form.submit 'Search'%>
+  <% end %>
 
+    <table>
+    <tr>
+      <%=tag.th t('user.name')%>
+      <%=tag.th t('user.surname')%>
+      <%=tag.th t('user.email')%>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.email %></td>
+      <td>
+    </tr>
+  <% end %>
+  </table>
 
-
-   <table>
-   <tr>
-     <%=tag.th t('user.name')%>
-     <%=tag.th t('user.surname')%>
-     <%=tag.th t('user.email')%>
-   </tr>
- <% @users.each do |user| %>
-   <tr>
-     <td><%= user.name %></td>
-     <td><%= user.lastname %></td>
-     <td><%= user.email %></td>
-     <td>
-   </tr>
- <% end %>
- </table>
- </section>
-</div>
-</div>
+  <%== pagy_nav(@pagy) %>
+  
+</section
