@@ -20,6 +20,6 @@ class UserFilter
     return if query.blank?
 
     @users = users.where('name ILIKE :query OR lastname ILIKE :query', query: "%#{query}%")
-                  .or(users.where("name || ' ' || lastname ILIKE :query", query: "%#{query}%"))
+                  .or(users.where("name || ' ' || lastname ILIKE :query OR lastname || ' ' || name ILIKE :query", query: "%#{query}%"))
   end
 end

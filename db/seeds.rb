@@ -12,3 +12,4 @@ User.create(name: 'Cristian', lastname: 'Martin', email: 'cristianmartin@gmail.c
 User.create(name: 'Sol', lastname: 'Gonzales', email: 'solgonzales@gmail.com', password: '1234', password_confirmation: '1234')
 User.create(name: 'Patricio', lastname: 'Galvan', email: 'patriciogalvan@gmail.com', password: '1234', password_confirmation: '1234')
 User.create(name: 'Federico', lastname: 'Pose', email: 'federicopose@gmail.com', password: '1234', password_confirmation: '1234')
+User.create(name: 'Jose', lastname: 'Martín', email: 'josemartin@gmail.com', password: '1234', password_confirmation: '1234')
