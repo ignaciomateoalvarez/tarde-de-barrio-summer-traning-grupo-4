@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy create]
 
-
   # GET /users or /users.json
   def index
-
     @filter = UserFilter.new(User.all, filter_params)
     @pagy, @users = pagy(@filter.call)
-    
   end
 
   # GET /users/1 or /users/1.json
@@ -54,7 +51,6 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }

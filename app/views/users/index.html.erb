@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <section class="filter-section">
-
+  <div>
   <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
-  <%= form.text_field :query,  value: params[:query] %>
+  <%= form.text_field :query %>
   <%= form.submit 'Search'%>
+  <%= link_to 'Delete', users_path %>
   <% end %>
 
     <table>
@@ -24,5 +25,5 @@
   </table>
 
   <%== pagy_nav(@pagy) %>
-  
+  </div>
 </section
