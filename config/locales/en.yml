@@ -43,7 +43,8 @@ en:
     log_in_google: 'Log in with Google' 
     
   register:
-    name: 'User Name'
+    name: 'Name'
+    surname: 'Surname'
     confirm_pw: 'Confirm Password'
     sign_up: 'Sign up'
     sign_up_google: 'Sign up with Google'

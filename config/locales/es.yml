@@ -11,7 +11,8 @@ es:
     log_in_google: 'Ingresar con Google' 
     
   register:
-    name: 'Nombre de usuario'
+    name: 'Nombre'
+    surname: 'Apellido'
     confirm_pw: 'Confirmar contraseña'
     sign_up: 'Registrarme'
     sign_up_google: 'Registrarme con Google'

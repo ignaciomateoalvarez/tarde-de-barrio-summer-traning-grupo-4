@@ -16,6 +16,10 @@
          <%= form.text_field :name_user, class: 'input'  %>
        </div>
        <div class="input-group">
+         <%= form.label t('register.surname'), class: 'label'  %>
+         <%= form.text_field :surname_user, class: 'input'  %>
+       </div>
+       <div class="input-group">
          <%= form.label t('session.email'), class: 'label'  %>
          <%= form.text_field :email_user, class: 'input'  %>
        </div>
@@ -27,7 +31,7 @@
          <%= form.label t('register.confirm_pw'), class: 'label'  %>
          <%= form.number_field :password, class: 'input', type: 'password' %>
        </div>
-       <button>Registrarme</button>
+       <%= button_to 'Registrarme', new_user_path%>
        <div>
        <br>
        <div class='google'>
