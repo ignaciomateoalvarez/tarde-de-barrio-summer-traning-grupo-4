@@ -10,29 +10,35 @@
  </div>
  <section>
  <h1 class="title">Registro</h1>
- <%= form_with  do |form| %>
-       <div class="input-group">
-         <%= form.label t('register.name'), class: 'label'  %>
-         <%= form.text_field :name_user, class: 'input'  %>
-       </div>
-       <div class="input-group">
-         <%= form.label t('register.surname'), class: 'label'  %>
-         <%= form.text_field :surname_user, class: 'input'  %>
-       </div>
-       <div class="input-group">
-         <%= form.label t('session.email'), class: 'label'  %>
-         <%= form.text_field :email_user, class: 'input'  %>
-       </div>
-       <div class="input-group">
-         <%= form.label t('session.pw'), class: 'label'%>
-         <%= form.number_field :password, class: 'input', type: 'password'%>
-       </div>
-       <div class="input-group">
-         <%= form.label t('register.confirm_pw'), class: 'label'  %>
-         <%= form.number_field :password, class: 'input', type: 'password' %>
-       </div>
-       <%= button_to 'Registrarme', new_user_path%>
-       <div>
+
+ <%= form_with url: registrations_path do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :lastname %><br>
+    <%= form.text_area :lastname %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_area :email %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_area :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %><br>
+    <%= form.text_area :password_confirmation %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
        <br>
        <div class='google'>
            <%= image_tag("google_logo.png")%>
