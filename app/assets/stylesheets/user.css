@@ -3,30 +3,81 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto';
+  background-color: #FFFFFF;
 }
 
+h1 {
+  text-align: center;
+  background: #0090AF;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border-bottom: 30px solid white;
+  padding: 10px;
+
+}
 
 table {
-  border: 1px solid #FFFFFF;
   border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  background-color: #E5E5E5;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
-
+tr { 
+  border: 1px solid #DADADA;
+}
 
 table th,
 table td {
-  padding: .625em;
+  padding: 15px;
   text-align: center;
 }
 
-table th {
-  font-size: .85em;
+
+
+th, td {
+  padding: 30px;
+
+}
+
+.th-name, .th-lastname, .th-email {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #007792;
+  text-align: center;
+}
+
+.td-name, .td-lastname {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #474747;
+
+}
+
+.td-email {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #474747;
 
 }
 
@@ -34,4 +85,37 @@ table th {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.users-button {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 10px;
+
+}
+
+.create-button { 
+  padding: 12px;
+  gap: 10px;
+  background: #0090AF;
+  border-radius: 4px;
+}
+
+#user_filter_query {
+  background: #FAFAFA;
+  border: 1.29514px solid #CCCCCC;
+  border-radius: 7.06992px;
+  padding: 8px 14px;
+}
+
+a {
+  text-decoration: none;
 }

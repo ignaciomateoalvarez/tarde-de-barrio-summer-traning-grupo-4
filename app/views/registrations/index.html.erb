@@ -11,7 +11,7 @@
  <section>
  <h1 class="title">Registro</h1>
 
- <%= form_with url: registrations_path do |form| %>
+ <%= form_with url: users_path, scope: :user, method: :post do |form| %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -19,21 +19,21 @@
 
   <div>
     <%= form.label :lastname %><br>
-    <%= form.text_area :lastname %>
+    <%= form.text_field :lastname %>
   </div>
 
   <div>
     <%= form.label :email %><br>
-    <%= form.text_area :email %>
+    <%= form.text_field :email %>
   </div>
 
   <div>
     <%= form.label :password %><br>
-    <%= form.text_area :password %>
+    <%= form.password_field :password %>
   </div>
   <div>
     <%= form.label :password_confirmation %><br>
-    <%= form.text_area :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
   </div>
 
   <div>
