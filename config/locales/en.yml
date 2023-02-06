@@ -56,7 +56,11 @@ en:
     name: 'Name'
     surname: 'Surname'
     email: 'Email'
-      
+    search: 'Search'
+    delete: 'Delete'
+    prev: 'Prev'
+    next: 'Next'
+     
 
 
 

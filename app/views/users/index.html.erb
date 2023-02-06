@@ -4,8 +4,8 @@
   <div>
   <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
   <%= form.text_field :query %>
-  <%= form.submit 'Search'%>
-  <%= link_to 'Delete', users_path %>
+  <%= form.submit t('user.search') %>
+  <%= link_to t('user.delete'), users_path %>
   <% end %>
 
     <table>

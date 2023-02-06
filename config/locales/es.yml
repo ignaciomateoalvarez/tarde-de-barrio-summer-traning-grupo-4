@@ -24,4 +24,8 @@ es:
     name: 'Nombre'
     surname: 'Apellido'
     email: 'Email'
+    search: 'Buscar'
+    delete: 'Borrar'
+    prev: 'Prev'
+    next: 'Sig'
   
