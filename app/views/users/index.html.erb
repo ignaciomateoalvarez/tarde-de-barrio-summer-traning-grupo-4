@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<section class="filter-section">
+  <div>
+  <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+  <%= form.text_field :query %>
+  <%= form.submit t('user.search') %>
+  <%= link_to t('user.delete'), users_path %>
+  <% end %>
+
+    <table>
+    <tr>
+      <%=tag.th t('user.name')%>
+      <%=tag.th t('user.surname')%>
+      <%=tag.th t('user.email')%>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.email %></td>
+      <td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%== pagy_nav(@pagy) %>
+  </div>
+</section

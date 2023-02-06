@@ -16,4 +16,16 @@ es:
     sign_up: 'Registrarme'
     sign_up_google: 'Registrarme con Google'
 
-
+  home:
+    title: 'Pagina de Inicio'
+    cerrar_sesion: 'Cerrar Sesion'
+  
+  user:
+    name: 'Nombre'
+    surname: 'Apellido'
+    email: 'Email'
+    search: 'Buscar'
+    delete: 'Borrar'
+    prev: 'Prev'
+    next: 'Sig'
+  

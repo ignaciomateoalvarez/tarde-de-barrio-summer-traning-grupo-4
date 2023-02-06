@@ -1,36 +1,40 @@
 <div class="contenedor">
   <nav class="menu">
-   <%= link_to "Sesion"%>
-   <%= link_to "Registro"%>
+   <%= link_to "Sesion", root_path%>
+   <%= link_to "Registro", registrations_path%>
  </nav>
  <hr>
  <div class= "grid">
  <div>
- <%= image_tag("Frame.jpg")%>
+ <%= image_tag("Frame.png")%>
  </div>
  <section>
  <h1 class="title">Registro</h1>
  <%= form_with  do |form| %>
        <div class="input-group">
-         <%= form.label :name_user, class: 'label'  %>
+         <%= form.label t('register.name'), class: 'label'  %>
          <%= form.text_field :name_user, class: 'input'  %>
        </div>
        <div class="input-group">
-         <%= form.label :email_user, class: 'label'  %>
+         <%= form.label t('session.email'), class: 'label'  %>
          <%= form.text_field :email_user, class: 'input'  %>
        </div>
        <div class="input-group">
-         <%= form.label :password, class: 'label'%>
-         <%= form.number_field :password, class: 'input'%>
+         <%= form.label t('session.pw'), class: 'label'%>
+         <%= form.number_field :password, class: 'input', type: 'password'%>
        </div>
        <div class="input-group">
-         <%= form.label :password, class: 'label'  %>
-         <%= form.number_field :password, class: 'input' %>
+         <%= form.label t('register.confirm_pw'), class: 'label'  %>
+         <%= form.number_field :password, class: 'input', type: 'password' %>
        </div>
        <button>Registrarme</button>
        <div>
        <br>
-         <%= form.submit%> 
+       <div class='google'>
+           <%= image_tag("google_logo.png")%>
+             <%= link_to t('session.log_in_google'), '/#', class: 'ingreso-google'%> 
+       </div>
+       <br>
        </div>
  <% end %> 
  </section>
