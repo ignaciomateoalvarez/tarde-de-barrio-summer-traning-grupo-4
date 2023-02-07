@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Estudiantes</h1>
-<section>
+<h1 class= "user-titulo">Estudiantes</h1>
+<body class="user-body">
 
-  <div class="form-users">
-    <div class="users-button">
+  <div class="user-form-users">
+    <div class="user-users-button">
     <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
     <%= form.text_field :query %>
     <%= form.submit t('user.search') %>
-    <%= link_to t('user.create'), new_user_path, class:'create-button' %>
+    <%= link_to t('user.create'), new_user_path, class:'user-create-button' %>
     <% end %>
     </div>
     
@@ -16,19 +16,19 @@
 
       <table>
       <tr>
-        <%=tag.th  t('user.name'), class:'th-name'%>
-        <%=tag.th  t('user.surname'), class:'th-lastname'%>
-        <%=tag.th  t('user.email'), class:'th-email'%>
+        <%=tag.th  t('user.name'), class:'user-th-name'%>
+        <%=tag.th  t('user.surname'), class:'user-th-lastname'%>
+        <%=tag.th  t('user.email'), class:'user-th-email'%>
       </tr>
     <% @users.each do |user| %>
       <tr>
-        <td class="td-name" ><%= user.name %></td>
-        <td class="td-lastname" ><%= user.lastname %></td>
-        <td class="td-email" ><%= user.email %></td>
+        <td class="user-td-name" ><%= user.name %></td>
+        <td class="user-td-lastname" ><%= user.lastname %></td>
+        <td class="user-td-email" ><%= user.email %></td>
       </tr>
     <% end %>
     </table>
     <%== pagy_nav(@pagy) %>
   </div>
 
-</section>
+</body>
