@@ -49,7 +49,7 @@ th, td {
 
 }
 
-.user-th-name, .user-th-lastname, .user-th-email {
+.user-th-name, .user-th-lastname, .user-th-email, .user-th-edit {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -107,7 +107,7 @@ color: #474747;
 
 }
 
-.user-create-button { 
+.user-create-button, .user-edit-button { 
   padding: 12px;
   gap: 10px;
   background: #0090AF;

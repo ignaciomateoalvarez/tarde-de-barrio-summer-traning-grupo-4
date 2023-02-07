@@ -62,7 +62,10 @@ en:
     prev: 'Prev'
     next: 'Next'
     create: 'New User'
-     
+    edit: 'Edit'
+    save: 'Save changes'
+
+         
 
 
 

@@ -30,4 +30,6 @@ es:
     prev: 'Prev'
     next: 'Sig'
     create: 'Nuevo Usuario'
+    edit: 'Editar'
+    save: 'Guardar cambios'
   

@@ -19,12 +19,14 @@
         <%=tag.th  t('user.name'), class:'user-th-name'%>
         <%=tag.th  t('user.surname'), class:'user-th-lastname'%>
         <%=tag.th  t('user.email'), class:'user-th-email'%>
+        <%=tag.th  t('user.edit'), class:'user-th-edit'%>
       </tr>
     <% @users.each do |user| %>
       <tr>
         <td class="user-td-name" ><%= user.name %></td>
         <td class="user-td-lastname" ><%= user.lastname %></td>
         <td class="user-td-email" ><%= user.email %></td>
+        <%= tag.td link_to t('user.edit'), edit_user_path(user), class:'user-edit-button' %>
       </tr>
     <% end %>
     </table>
