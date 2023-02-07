@@ -1,12 +1,16 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto';
-  background-color: #FFFFFF;
 }
 
-h1 {
+.user-body {
+  background:#FAFAFA;
+
+}
+
+.user-titulo {
   text-align: center;
   background: #0090AF;
   font-family: 'Roboto';
@@ -20,14 +24,14 @@ h1 {
 
 }
 
-table {
+.user-table {
   border-collapse: collapse;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
-tr { 
+.user-tr { 
   border: 1px solid #DADADA;
 }
 
@@ -41,10 +45,11 @@ table td {
 
 th, td {
   padding: 30px;
+  border: 1px solid #DADADA;
 
 }
 
-.th-name, .th-lastname, .th-email {
+.user-th-name, .user-th-lastname, .user-th-email {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -55,7 +60,7 @@ th, td {
   text-align: center;
 }
 
-.td-name, .td-lastname {
+.user-td-name, .user-td-lastname {
   font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
@@ -68,7 +73,7 @@ color: #474747;
 
 }
 
-.td-email {
+.user-td-email {
   font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
@@ -87,14 +92,14 @@ color: #474747;
   align-items: center;
 }
 
-.form-users {
+.user-form-users {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.users-button {
+.user-users-button {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
@@ -102,7 +107,7 @@ color: #474747;
 
 }
 
-.create-button { 
+.user-create-button { 
   padding: 12px;
   gap: 10px;
   background: #0090AF;
