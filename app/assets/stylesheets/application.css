@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ #modal {
+    position: fixed;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-top: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 2;
+    width: 400px;
+    word-break: break-word;
+    border-radius: 6px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+ .edit-h1{
+    background: #0090AF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+ }
+ .modal-background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.274);
+    z-index: 1;
+ }
