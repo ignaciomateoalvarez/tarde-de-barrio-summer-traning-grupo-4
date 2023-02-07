@@ -1,4 +1,5 @@
-<h1>Editar</h1>
+<%= turbo_frame_tag "modal" do %>
+<h1 class="edit-h1">Modificar usuario</h1>
 
 <%= form_with model: @user do |form| %>
     <div>
@@ -13,11 +14,12 @@
 
     <div>
       <%= form.label :email %><br>
-      <%= form.text_field :email %>
+      <%= form.text_field :email, disabled: true %>
     </div>
   
     <div>
       <%= form.submit t("user.save") %>
-      <p><%= link_to "Users", users_path%></p>
+      <p><%= link_to t("user.close"), users_path%></p>
     </div>
+  <% end %>
   <% end %>
