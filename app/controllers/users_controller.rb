@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :ensure_frame_response, only: [:new, :edit]
+
 
   # GET /users or /users.json
   def index
-    @filter = UserFilter.new(User.all, filter_params)
+    @filter = UserFilter.new(User.all.order(created_at: :desc), filter_params)
     @pagy, @users = pagy(@filter.call)
   end
 
@@ -69,4 +71,11 @@ class UsersController < ApplicationController
       :query
     )
   end
+
+
+  def ensure_frame_response
+    return unless Rails.env.development?
+    redirect_to root_path unless turbo_frame_request?
+  end
+  
 end
