@@ -1,4 +1,3 @@
-
 <%= turbo_frame_tag "modal" do %>
 <%= tag.div data: { controller: "turbo-modal",
                       turbo_modal_target: "modal",
@@ -7,23 +6,23 @@
 
 <%= form_with model: @user do |form| %>
     <div>
-      <%= form.label :name %><br>
+      <%= form.label t('user.name') %><br>
       <%= form.text_field :name %>
     </div>
   
     <div>
-      <%= form.label :lastname %><br>
+      <%= form.label t('user.surname') %><br>
       <%= form.text_field :lastname %>
     </div>
 
     <div>
-      <%= form.label :email %><br>
+      <%= form.label t('user.email') %><br>
       <%= form.text_field :email, disabled: true %>
     </div>
   
     <div>
-      <%= form.submit t("user.save") %>
-    <%= button_tag "Close", data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+      <%= form.submit t("user.save"), class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+    <%= button_tag t('user.close'), data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
     <% end %>
     </div>
   <% end %>
