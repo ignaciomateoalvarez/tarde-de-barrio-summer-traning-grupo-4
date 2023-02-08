@@ -32,5 +32,9 @@ es:
     create: 'Nuevo Usuario'
     edit: 'Editar'
     save: 'Guardar cambios'
-    closed: 'Cerrar'
+    close: 'Cerrar'
+    create_user: 'Crear Usuario'
+    rol: 'Rol'
+    activate: 'Activar'
+
   
