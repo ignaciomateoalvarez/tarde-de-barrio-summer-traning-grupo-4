@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   root 'sessions#new'
   resources :registrations
   resources :sessions
-  resources :users 
+  resources :users do 
+    member do 
+      put 'toggle_active', to: 'users#toggle_active'
+    end
+  end
+
 
   resources :homes, only: [:index]
   get 'logout' => 'sessions#destroy', :as => 'logout'
+
+
 end

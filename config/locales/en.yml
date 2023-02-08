@@ -55,7 +55,7 @@ en:
 
   user:
     name: 'Name'
-    surname: 'Surname'
+    surname: 'Lastname'
     email: 'Email'
     search: 'Search'
     delete: 'Delete'
@@ -66,6 +66,8 @@ en:
     save: 'Save changes'
     close: 'Close'
     create_user: 'Create User'
+    rol: 'Role'
+    activate: 'Activate'
 
          
 

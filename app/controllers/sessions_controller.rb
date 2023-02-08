@@ -4,9 +4,11 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
+    #veriricar si el mail del usuario esta registrado
+    #si esta registrado hacer toda la logica q sigue:
     @user = login(params[:email], params[:password])
 
-    if @user
+    if @user && @user.is_active
       redirect_back_or_to(homes_path, notice: 'Login successful')
     else
       flash.now[:alert] = 'Login failed'

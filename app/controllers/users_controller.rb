@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
-  before_action :ensure_frame_response, only: [:new, :edit]
-
+  before_action :set_user, only: %i[show edit update destroy toggle_active]
+  before_action :ensure_frame_response, only: %i[new edit]
 
   # GET /users or /users.json
   def index
@@ -45,6 +44,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def toggle_active
+    if @user.is_active?
+      @user.update_attribute :is_active, false
+    else
+      @user.update_attribute :is_active, true
+    end
+    redirect_to users_path
+  end
+
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
@@ -72,10 +80,9 @@ class UsersController < ApplicationController
     )
   end
 
-
   def ensure_frame_response
     return unless Rails.env.development?
+
     redirect_to root_path unless turbo_frame_request?
   end
-  
 end

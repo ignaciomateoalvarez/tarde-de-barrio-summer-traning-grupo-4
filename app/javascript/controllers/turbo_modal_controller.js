@@ -5,7 +5,6 @@ export default class extends Controller {
 
   static targets = ["modal"]
 
-
   toggleBackground(){
     document.getElementById('modal-background').hidden=false
   }
