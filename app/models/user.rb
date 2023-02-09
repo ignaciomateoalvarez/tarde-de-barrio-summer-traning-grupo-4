@@ -9,6 +9,16 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
+  #validaciones del form
+  validates :name, length: { minimum: 20 }
+  validates :lastname, length: { minimum: 20 }
+  validates :role, presence: true 
+  validates :password, length: { minimum: 5 }
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
+  
+
+
   attr_readonly :email
 
   enum role: {admin:0, colab:1}
