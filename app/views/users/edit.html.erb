@@ -20,6 +20,15 @@
       <%= form.label t('user.email') %><br>
       <%= form.text_field :email, disabled: true %>
     </div>
+
+    <div>
+    <%= form.label t('user.rol') %><br>
+    <%= form.text_field :role, list: 'role'%>
+    <datalist id="role">
+      <option><%= 'Administrador' %></option>
+      <option><%= 'Colaborador' %></option>
+    </datalist>
+  </div>
   
     <div>
       <%= form.submit t("user.save"), class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>

@@ -22,6 +22,15 @@
   </div>
 
   <div>
+  <%= form.label t('user.rol') %><br>
+  <%= form.text_field :role, list: 'role'%>
+  <datalist id="role">
+    <option><%= 'Administrador' %></option>
+    <option><%= 'Colaborador' %></option>
+  </datalist>
+</div>
+
+  <div>
     <%= form.label t('session.pw') %><br>
     <%= form.password_field :password %>
   </div>

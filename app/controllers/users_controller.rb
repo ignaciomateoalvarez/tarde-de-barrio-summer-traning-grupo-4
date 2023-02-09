@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy toggle_active]
   before_action :ensure_frame_response, only: %i[new edit]
+  #before_create :user_default
 
   # GET /users or /users.json
   def index
@@ -71,7 +72,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation, :role)
   end
 
   def filter_params
@@ -85,4 +86,8 @@ class UsersController < ApplicationController
 
     redirect_to root_path unless turbo_frame_request?
   end
+
+  #def user_default
+   # self.role = :admin
+  #end
 end

@@ -27,7 +27,7 @@
         <td class="user-td-name" ><%= user.name %></td>
         <td class="user-td-lastname" ><%= user.lastname %></td>
         <td class="user-td-email" ><%= user.email %></td>
-        <td class="user-td-rol"> <%= t('user.rol')%>
+        <td class="user-td-rol"> <%= user.role%>
         <td class="user-td-toggle" data-controller='toggle' data-toggle-url-value="<%=toggle_active_user_path(user.id)%>"> 
           <label class="switch">
             <input type="checkbox" data-action='click->toggle#userActivate' <% if user.is_active?%> checked <%end%> /> 
