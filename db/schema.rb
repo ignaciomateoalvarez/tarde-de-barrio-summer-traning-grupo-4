@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_132446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_active", default: true
-    t.integer "role"
+    t.integer "role", default: 1
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

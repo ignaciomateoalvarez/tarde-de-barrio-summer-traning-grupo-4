@@ -1,4 +1,5 @@
 es:
+  hello: "Hola Mundo"
   session: 
     session_: 'Iniciar sesión'
     sign_up: 'Registro'
@@ -9,13 +10,7 @@ es:
     sign_in: 'Ingresar'
     forgot_pw: 'Olvidé mi contraseña'
     log_in_google: 'Ingresar con Google' 
-    
-  register:
-    name: 'Nombre'
-    surname: 'Apellido'
-    confirm_pw: 'Confirmar contraseña'
-    sign_up: 'Registrarme'
-    sign_up_google: 'Registrarme con Google'
+    regist: 'Registrarse'
 
   home:
     title: 'Pagina de Inicio'
@@ -36,5 +31,9 @@ es:
     create_user: 'Crear Usuario'
     rol: 'Rol'
     activate: 'Activar'
+    confirm_pw: 'Confirmar contraseña'
+    sign_up: 'Ingresar'
+    sign_up_google: 'Ingresar con Google'
+    pw: 'Contraseña'
 
   
