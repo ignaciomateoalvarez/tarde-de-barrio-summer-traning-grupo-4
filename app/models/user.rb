@@ -11,6 +11,6 @@ class User < ApplicationRecord
 
   attr_readonly :email
 
-  enum role: [:admin, :colab]
+  enum role: {admin:0, colab:1}
 
 end

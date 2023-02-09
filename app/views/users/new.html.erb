@@ -23,11 +23,7 @@
 
   <div>
   <%= form.label t('user.rol') %><br>
-  <%= form.text_field :role, list: 'role'%>
-  <datalist id="role">
-    <option><%= 'Administrador' %></option>
-    <option><%= 'Colaborador' %></option>
-  </datalist>
+  <%= form.select :role, User.roles.keys, include_blank: false%>
 </div>
 
   <div>
