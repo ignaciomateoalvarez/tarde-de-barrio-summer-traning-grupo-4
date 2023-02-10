@@ -35,5 +35,7 @@ es:
     sign_up: 'Ingresar'
     sign_up_google: 'Ingresar con Google'
     pw: 'Contraseña'
+    modifUser: 'Modificar usuario'
+    user: 'Usuario'
 
   

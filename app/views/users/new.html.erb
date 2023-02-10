@@ -3,7 +3,7 @@
                       turbo_modal_target: "modal",
                       action: "turbo:submit-end->turbo-modal#submitEnd keyup@window->turbo-modal#closeWithKeyboard click@window->turbo-modal#closeBackground" },
                       class: "p-5 bg-slate-300 absolute z-10 top-10 right-10 rounded-md w-96 break-words" do %>
-<%=tag.h1 t('user.create')%>
+<%=tag.h1 t('user.create'), class: "edit-h1"%>
 
 <%= form_with model: @user do |form| %>
   <div>

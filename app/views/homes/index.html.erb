@@ -1,11 +1,9 @@
-<div class="contenedor">
-<%=tag.h1 t('home.title')%>
- <hr>
- <div class= "grid">
- <section>
- <%= current_user.email %> 
- <%= link_to t('home.cerrar_sesion'), logout_path %> 
- <%= link_to 'User', users_path %> 
- </section>
- </div>
- </div>
+<%=tag.h1 t('home.title'), class:"user-titulo"%>
+  <body class="user-body">
+  <section class:"home-section">
+    <%=tag.p current_user.name %> 
+    <%=tag.p current_user.email %> 
+  </section>
+  <%= link_to t('home.cerrar_sesion'), logout_path %> 
+  <%= link_to 'User', users_path %> 
+</body>
