@@ -5,8 +5,8 @@ export default class extends Controller {
 
   static targets = ["modal"]
 
-  toggleBackground(){
-    document.getElementById('modal-background').hidden=false
+  connect(){
+    document.getElementById('modal-background').hidden = false
   }
 
   // hide modal
@@ -15,6 +15,7 @@ export default class extends Controller {
   hideModal() {
     this.element.parentElement.removeAttribute("src") // it might be nice to also remove the modal SRC
     this.modalTarget.remove()
+    document.getElementById('modal-background').hidden = true
   }
 
     // hide modal when clicking ESC

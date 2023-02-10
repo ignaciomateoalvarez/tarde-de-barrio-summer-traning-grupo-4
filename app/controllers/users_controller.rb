@@ -15,16 +15,19 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    authorize current_user
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    authorize current_user
     @user = User.find(params[:id])
   end
 
   # POST /users or /users.json
   def create
+    authorize current_user
     @user = User.create(user_params)
     if @user.save
       redirect_to users_path
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    authorize current_user
     @user = User.find(params[:id])
 
     if @user.update(user_params)
@@ -71,7 +75,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation, :role)
   end
 
   def filter_params
@@ -85,4 +89,5 @@ class UsersController < ApplicationController
 
     redirect_to root_path unless turbo_frame_request?
   end
+
 end

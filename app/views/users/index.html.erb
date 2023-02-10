@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class= "user-titulo">Estudiantes</h1>
+<%=tag.h1 t('user.user'), class:"user-titulo"%>
 <body class="user-body">
 
   <div class="user-form-users">
@@ -17,9 +17,11 @@
         <%=tag.th  t('user.name'), class:'user-th-name'%>
         <%=tag.th  t('user.surname'), class:'user-th-lastname'%>
         <%=tag.th  t('user.email'), class:'user-th-email'%>
+        <% if policy(current_user).edit? %>
         <%=tag.th t('user.rol'), class:'user-th-name'%>
         <%=tag.th t('user.activate'), class:'user-th-name'%>
         <%=tag.th  t('user.edit'), class:'user-th-edit'%>
+        <% end %>
       </tr>
 
     <% @users.each do |user| %>
@@ -27,7 +29,8 @@
         <td class="user-td-name" ><%= user.name %></td>
         <td class="user-td-lastname" ><%= user.lastname %></td>
         <td class="user-td-email" ><%= user.email %></td>
-        <td class="user-td-rol"> <%= t('user.rol')%>
+        <% if policy(current_user).edit? %>
+        <td class="user-td-rol"> <%= user.role%>
         <td class="user-td-toggle" data-controller='toggle' data-toggle-url-value="<%=toggle_active_user_path(user.id)%>"> 
           <label class="switch">
             <input type="checkbox" data-action='click->toggle#userActivate' <% if user.is_active?%> checked <%end%> /> 
@@ -36,6 +39,7 @@
         </td>
         <%= tag.td link_to t('user.edit'), edit_user_path(user), data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-edit-button' %>
       </tr>
+    <% end %>
     <% end %>
     </table>
     <%== pagy_nav(@pagy) %>

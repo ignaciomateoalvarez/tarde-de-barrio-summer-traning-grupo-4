@@ -82,3 +82,5 @@ group :test do
 end
 
 gem "view_component", "~> 2.82"
+
+gem "pundit", "~> 2.3"

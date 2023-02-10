@@ -9,5 +9,6 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-  attr_readonly :email
+  enum role: {admin:0, colab:1}
+
 end
