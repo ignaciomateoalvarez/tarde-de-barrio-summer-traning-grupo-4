@@ -69,6 +69,13 @@ en:
     modifUser: 'Modify user'
     user: 'User'
 
+  error: 'Error'
+  cerro_sesion: 'Signed out'
+  not_found: 'User Not Found'
+  user_disabled: 'User is disabled'
+  login_failed: 'Login Failed'
+  login_success: 'Login successful'
+
          
 
 

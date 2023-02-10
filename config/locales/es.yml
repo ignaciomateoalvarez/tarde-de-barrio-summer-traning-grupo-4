@@ -38,4 +38,11 @@ es:
     modifUser: 'Modificar usuario'
     user: 'Usuario'
 
+  error: 'Error'
+  cerro_sesion: 'Cerró Sesión'
+  not_found: 'Usario no encontrado'
+  user_disabled: 'Usuario deshabilitado'
+  login_failed: 'Inicio de Sesión Fallido'
+  login_success: 'Inicio de Sesión Éxitoso'
+
   
