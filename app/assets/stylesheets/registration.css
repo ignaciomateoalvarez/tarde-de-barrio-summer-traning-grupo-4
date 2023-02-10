@@ -18,11 +18,11 @@ body {
 }
 
 .div-rectangle {
-  width: 887px;
-  height: 584px;
+  width: 55.4375rem;
+  height: 36.5rem;
   background: #FFFFFF;
-  box-shadow: -7px 7px 30px rgba(0, 76, 92, 0.2);
-  border-radius: 8px;
+  box-shadow: -0.4375rem 0.4375rem 1.875rem rgba(0, 76, 92, 0.2);
+  border-radius: 0.5rem;
 }
 
 .div-content {
@@ -78,11 +78,11 @@ div.d2 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 29px;
+  font-size: 1.125rem;
+  line-height: 1.8125rem;
   text-align: center;
   color: #000000;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .div-img {
@@ -98,25 +98,25 @@ h2.ingresar {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  font-size: 24.176px;
-  line-height: 29px;
+  font-size: 1.511rem;
+  line-height: 1.8125rem;
   text-align: center;
   color: #000000; 
 
 }
 
 .btn-ingresar {
-  width: 233.1104px;
-  height: 40px;
-  left: 823.8896px;
-  top: 603px;
+  width: 14.5694rem;
+  height: 2.5rem;
+  left: 51.4931rem;
+  top: 37.6875rem;
   background: #0090AF;
-  border-radius: 3.4544px;
+  border-radius: 0.2159rem;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1rem;
+  line-height: 1.125rem;
   text-align: center;
   color: #FFFFFF;
 
@@ -131,7 +131,7 @@ label {
   line-height: 0.9375rem;
   color: #000000;
   text-align: left;
-  padding: 5px;
+  padding: 0.3125rem;
 }
 
 .input-label {
@@ -150,7 +150,7 @@ a.ingreso-google {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   color: #000000;
   text-decoration: none;
 
@@ -160,8 +160,8 @@ a.sesion{
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 29px;  
+  font-size: 1.125rem;
+  line-height: 1.8125rem;  
   text-align: center;
   color: #0090AF;
 }
@@ -170,8 +170,8 @@ a.registro {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 29px;
+  font-size: 1.125rem;
+  line-height: 1.8125rem;
   text-align: center;
   color: #000000;
 }
@@ -180,26 +180,26 @@ a.forgot-pw {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 13px;
-  line-height: 29px;
+  font-size: 0.8125rem;
+  line-height: 1.8125rem;
   color: #0090AF;  
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 
 .google { 
 
-  border: #0090AF 1px;
+  border: #0090AF 0.0625rem;
   border-style: solid;
-  width: 233.1104px;
-  height: 40px;
-  left: 823.8896px;
-  top: 603px;
-  border-radius: 3.4544px;
+  width: 14.5694rem;
+  height: 2.5rem;
+  left: 51.4931rem;
+  top: 37.6875rem;
+  border-radius: 0.2159rem;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
@@ -218,7 +218,7 @@ div.google img {
 }
 
 .sesion, .registro {
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .div-checkout {
@@ -231,6 +231,6 @@ div.google img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
 }
 

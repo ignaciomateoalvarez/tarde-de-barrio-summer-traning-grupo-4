@@ -7,7 +7,8 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to users_path
+      login(user_params[:email], user_params[:password])
+      redirect_to homes_path
     else
       render :new, status: :unprocessable_entity
     end
