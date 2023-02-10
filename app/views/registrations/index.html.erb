@@ -1,5 +1,4 @@
 <main>
-
   <section class="section-form">
     <div class = "div-rectangle">
       <div class = div-nav>
@@ -9,14 +8,12 @@
         </nav>
       </div>
       <hr>
-
-     
       <div class = "div-content">
         <div class = 'div-img'>
           <%= image_tag("Frame.png") %>
         </div>
         
-        <%= form_with url: users_path, scope: :user, method: :post, class: 'div-form' do |form| %> 
+        <%= form_with url: registrations_path, method: :post, class: 'div-form' do |form| %> 
           <div class="d1">
             <%= tag.h1 t('session.regist'), class:"ingresar" %> 
           </div>

@@ -49,6 +49,7 @@ class UsersController < ApplicationController
   end
 
   def toggle_active
+    authorize current_user
     if @user.is_active?
       @user.update_attribute :is_active, false
     else
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    authorize current_user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -86,7 +88,6 @@ class UsersController < ApplicationController
 
   def ensure_frame_response
     return unless Rails.env.development?
-
     redirect_to root_path unless turbo_frame_request?
   end
 
