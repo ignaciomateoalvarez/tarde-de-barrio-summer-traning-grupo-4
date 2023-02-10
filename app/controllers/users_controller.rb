@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy create]
+  before_action :set_user, only: %i[show edit update destroy toggle_active]
+  before_action :ensure_frame_response, only: %i[new edit]
 
   # GET /users or /users.json
   def index
-    @filter = UserFilter.new(User.all, filter_params)
+    @filter = UserFilter.new(User.all.order(created_at: :desc), filter_params)
     @pagy, @users = pagy(@filter.call)
   end
 
@@ -14,42 +15,52 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    authorize current_user
     @user = User.new
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    authorize current_user
+    @user = User.find(params[:id])
+  end
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    authorize current_user
+    @user = User.create(user_params)
+    if @user.save
+      redirect_to users_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    authorize current_user
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      redirect_to users_path
+    else
+      render :edit
     end
+  end
+
+  def toggle_active
+    authorize current_user
+    if @user.is_active?
+      @user.update_attribute :is_active, false
+    else
+      @user.update_attribute :is_active, true
+    end
+    redirect_to users_path
   end
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    authorize current_user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -66,7 +77,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation, :role)
   end
 
   def filter_params
@@ -74,4 +85,10 @@ class UsersController < ApplicationController
       :query
     )
   end
+
+  def ensure_frame_response
+    return unless Rails.env.development?
+    redirect_to root_path unless turbo_frame_request?
+  end
+
 end

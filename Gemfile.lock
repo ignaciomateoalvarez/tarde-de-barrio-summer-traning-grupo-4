@@ -158,6 +158,8 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-test (2.0.2)
@@ -247,6 +249,10 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     version_gem (1.1.1)
+    view_component (2.82.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -278,6 +284,7 @@ DEPENDENCIES
   pagy (~> 6.0)
   pg (~> 1.1)
   puma (~> 5.0)
+  pundit (~> 2.3)
   rails (~> 7.0.4, >= 7.0.4.1)
   rails-controller-testing
   rspec-rails
@@ -288,6 +295,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  view_component (~> 2.82)
   web-console
   webdrivers
 

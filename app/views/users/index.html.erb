@@ -1,29 +1,52 @@
 <p style="color: green"><%= notice %></p>
 
-<section class="filter-section">
-  <div>
-  <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
-  <%= form.text_field :query %>
-  <%= form.submit t('user.search') %>
-  <%= link_to t('user.delete'), users_path %>
-  <% end %>
+<%=tag.h1 t('user.user'), class:"user-titulo"%>
+<body class="user-body">
+  
+  <div class="user-form-users">
+    <%= link_to t('home.cerrar_sesion'), logout_path, class:'logout-btn' %> 
+    <div class="user-users-button">
+     
+    <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+    <%= form.text_field :query %>
+    <%= form.submit t('user.search') %>
+    <% if policy(current_user).new?%>
+    <%= link_to t('user.create'), new_user_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' %>
+    <% end %>
+    <% end %>
+    </div>
 
-    <table>
-    <tr>
-      <%=tag.th t('user.name')%>
-      <%=tag.th t('user.surname')%>
-      <%=tag.th t('user.email')%>
-    </tr>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.lastname %></td>
-      <td><%= user.email %></td>
-      <td>
-    </tr>
-  <% end %>
-  </table>
+      <table>
+      <tr>
+        <%=tag.th  t('user.name'), class:'user-th-name'%>
+        <%=tag.th  t('user.surname'), class:'user-th-lastname'%>
+        <%=tag.th  t('user.email'), class:'user-th-email'%>
+        <% if policy(current_user).edit?%>
+        <%=tag.th t('user.rol'), class:'user-th-name'%>
+        <%=tag.th t('user.activate'), class:'user-th-name'%>
+        <%=tag.th  t('user.edit'), class:'user-th-edit'%>
+        <% end %>
+      </tr>
 
-  <%== pagy_nav(@pagy) %>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="user-td-name" ><%= user.name %></td>
+        <td class="user-td-lastname" ><%= user.lastname %></td>
+        <td class="user-td-email" ><%= user.email %></td>
+        <% if policy(current_user).edit? %>
+        <td class="user-td-rol"> <%= user.role%>
+        <td class="user-td-toggle" data-controller='toggle' data-toggle-url-value="<%=toggle_active_user_path(user.id)%>"> 
+          <label class="switch">
+            <input type="checkbox" data-action='click->toggle#userActivate' <% if user.is_active?%> checked <%end%> /> 
+            <span class="slider round"></span>
+          </label>
+        </td>
+        <%= tag.td link_to t('user.edit'), edit_user_path(user), data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-edit-button' %>
+      </tr>
+    <% end %>
+    <% end %>
+    </table>
+    <%== pagy_nav(@pagy) %>
   </div>
-</section
+
+</body>

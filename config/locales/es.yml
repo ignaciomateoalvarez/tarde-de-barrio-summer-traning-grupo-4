@@ -1,4 +1,5 @@
 es:
+  hello: "Hola Mundo"
   session: 
     session_: 'Iniciar sesión'
     sign_up: 'Registro'
@@ -9,12 +10,7 @@ es:
     sign_in: 'Ingresar'
     forgot_pw: 'Olvidé mi contraseña'
     log_in_google: 'Ingresar con Google' 
-    
-  register:
-    name: 'Nombre de usuario'
-    confirm_pw: 'Confirmar contraseña'
-    sign_up: 'Registrarme'
-    sign_up_google: 'Registrarme con Google'
+    regist: 'Registrarse'
 
   home:
     title: 'Pagina de Inicio'
@@ -28,4 +24,25 @@ es:
     delete: 'Borrar'
     prev: 'Prev'
     next: 'Sig'
+    create: 'Nuevo Usuario'
+    edit: 'Editar'
+    save: 'Guardar cambios'
+    close: 'Cerrar'
+    create_user: 'Crear Usuario'
+    rol: 'Rol'
+    activate: 'Activar'
+    confirm_pw: 'Confirmar contraseña'
+    sign_up: 'Ingresar'
+    sign_up_google: 'Ingresar con Google'
+    pw: 'Contraseña'
+    modifUser: 'Modificar usuario'
+    user: 'Usuario'
+
+  error: 'Error'
+  cerro_sesion: 'Cerró Sesión'
+  not_found: 'Usario no encontrado'
+  user_disabled: 'Usuario deshabilitado'
+  login_failed: 'Inicio de Sesión Fallido'
+  login_success: 'Inicio de Sesión Éxitoso'
+
   

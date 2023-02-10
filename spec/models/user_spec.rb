@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Uniqueness validations' do
-    it { is_expected.to validate_uniqueness_of(:email) }
+    it { is_expected.to validate_uniqueness_of(:email).ignoring_case_sensitivity }
   end
 
   describe 'Email Format' do
@@ -16,4 +16,5 @@ RSpec.describe User, type: :model do
     it { is_expected.to_not allow_value('namedoman.com').for(:email) }
     it { is_expected.to_not allow_value('name@domancom').for(:email) }
   end
+  
 end

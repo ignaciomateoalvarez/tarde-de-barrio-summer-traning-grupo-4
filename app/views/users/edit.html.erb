@@ -1,10 +1,36 @@
-<h1>Editing user</h1>
+<%= turbo_frame_tag "modal" do %>
 
-<%= render "form", user: @user %>
+<%= tag.div data: { controller: "turbo-modal",
+                      turbo_modal_target: "modal",
+                      action: "turbo:submit-end->turbo-modal#submitEnd keyup@window->turbo-modal#closeWithKeyboard click@window->turbo-modal#closeBackground" },
+                      class: "p-5 bg-slate-300 absolute z-10 top-10 right-10 rounded-md w-96 break-words" do %>
+<%=tag.h1 t('user.modifUser'), class:"edit-h1"%>
 
-<br>
+<%= form_with model: @user do |form| %>
+    <div>
+      <%= form.label t('user.name') %><br>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div>
+      <%= form.label t('user.surname') %><br>
+      <%= form.text_field :lastname %>
+    </div>
 
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
+    <div>
+      <%= form.label t('user.email') %><br>
+      <%= form.text_field :email, disabled: true %>
+    </div>
+
+    <div>
+    <%= form.label t('user.rol') %><br>
+    <%= form.select :role, User.roles.keys, include_blank: false %>
+  </div>
+  
+    <div>
+      <%= form.submit t("user.save"), class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+    <%= button_tag t('user.close'), data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+    <% end %>
+    </div>
+  <% end %>
+  <% end %>

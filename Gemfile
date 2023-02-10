@@ -80,3 +80,7 @@ group :test do
   gem 'shoulda-matchers'
 
 end
+
+gem "view_component", "~> 2.82"
+
+gem "pundit", "~> 2.3"

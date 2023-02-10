@@ -4,21 +4,28 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    @user = login(params[:email], params[:password])
-
-    if @user
-      redirect_back_or_to(homes_path, notice: 'Login successful')
+    @user = User.find_by(email: params[:email])
+    if @user.present?
+      if @user.is_active?
+        if login(params[:email], params[:password])
+          redirect_back_or_to(homes_path, notice: t('login_success'))
+        else
+          flash.now[:alert] = t('login_failed')
+          render action: :new, status: :unprocessable_entity
+        end
+      else
+        redirect_to root_path, alert: t('user_disabled')
+      end
     else
-      flash.now[:alert] = 'Login failed'
-      render action: :new, status: :unprocessable_entity
+      redirect_to root_path, alert: t('not_found')
     end
   end
 
   def destroy
     if logout
-      redirect_to(root_path, notice: 'Logged out!')
+      redirect_to(root_path, notice: t('cerro_sesion'))
     else
-      flash.now[:error] = 'Error'
+      flash.now[:error] = t('error')
     end
   end
 end

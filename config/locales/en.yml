@@ -36,17 +36,12 @@ en:
     sign_up: 'Sign Up'
     sign_in_account: 'Log in my account'
     email: 'Email'
-    pw: 'Password'
     remember_me: 'Remember me'
     sign_in: 'Log in'
     forgot_pw: 'Forgot my password'
     log_in_google: 'Log in with Google' 
-    
-  register:
-    name: 'User Name'
-    confirm_pw: 'Confirm Password'
-    sign_up: 'Sign up'
-    sign_up_google: 'Sign up with Google'
+    pw: 'Password'
+    regist: 'Check in'
 
   home:
     title: 'Home Page'
@@ -54,13 +49,34 @@ en:
 
   user:
     name: 'Name'
-    surname: 'Surname'
+    surname: 'Lastname'
     email: 'Email'
     search: 'Search'
     delete: 'Delete'
     prev: 'Prev'
     next: 'Next'
-     
+    create: 'New User'
+    edit: 'Edit'
+    save: 'Save changes'
+    close: 'Close'
+    create_user: 'Create User'
+    rol: 'Role'
+    activate: 'Activate'
+    confirm_pw: 'Confirm Password'
+    sign_up: 'Sign up'
+    sign_up_google: 'Sign up with Google'
+    pw: 'Password'
+    modifUser: 'Modify user'
+    user: 'User'
+
+  error: 'Error'
+  cerro_sesion: 'Signed out'
+  not_found: 'User Not Found'
+  user_disabled: 'User is disabled'
+  login_failed: 'Login Failed'
+  login_success: 'Login successful'
+
+         
 
 
 
