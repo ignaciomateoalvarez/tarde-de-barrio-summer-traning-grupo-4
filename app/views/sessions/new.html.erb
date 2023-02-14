@@ -1,62 +1,47 @@
 <main>
-
   <section class="section-form">
     <div class = "div-rectangle">
       <div class = div-nav>
         <nav>
-        <%= link_to t('session.session_'), root_path, class: 'sesion' %> 
-        <%= link_to t('session.sign_up'), registrations_path, class: 'registro' %> 
+          <%= link_to t('session.session_'), root_path, class: 'sesion' %>
+          <%= link_to t('session.sign_up'), registrations_path, class: 'registro' %>
         </nav>
       </div>
       <hr>
-
-     
       <div class = "div-content">
         <div class = 'div-img'>
           <%= image_tag("Frame.png") %>
         </div>
-        
-        <%= form_with url: sessions_path, method: :post, class: 'div-form' do |form| %> 
+        <%= form_with url: sessions_path, method: :post, class: 'div-form' do |form| %>
           <div class="d1">
-            <%= tag.h1 t('session.sign_in_account'), class:"ingresar" %> 
+            <%= tag.h1 t('session.sign_in_account'), class:"ingresar" %>
           </div>
-
           <% if flash[:notice].present? %>
-          <%= flash[:notice] %>
-        <%end%> 
-        <% if flash[:alert].present? %>
-        <p> <%= flash[:alert] %> </p>
-      <%end%> 
-      
+            <%= flash[:notice] %>
+          <%end%>
+          <% if flash[:alert].present? %>
+            <p> <%= flash[:alert] %> </p>
+          <%end%>
           <div class="d2">
             <%= form.label t('session.email'), class: 'label'%>
             <%= form.text_field :email, placeholder: 'admin@admin.com', class: 'input-label' %>
-            
             <%= form.label t('session.pw'), class: 'label'%>
             <%= form.text_field :password, placeholder: 'password', class: 'input-label',type: 'password' %>
           </div>
-
-            <div class = "div-checkout">
-              <%= form.check_box :remember_me, class: 'remember-me' %>
-              <%= form.label t('session.remember_me'), class: 'remember-me-label' %>
-            </div>
-
-            
-
-
-          
-            <div class = 'div-links'>
-              <%= form.submit t('session.sign_in'), class: 'btn-ingresar'%>  
-              <%= link_to t('session.forgot_pw'), '/#', class: 'forgot-pw'%> 
-              <div class='google'>
-                <%= image_tag("google_logo.png")%>
-                <%= link_to t('session.log_in_google'), '/#', class: 'ingreso-google'%> 
-              </div>
+          <div class = "div-checkout">
+            <%= form.check_box :remember_me, class: 'remember-me' %>
+            <%= form.label t('session.remember_me'), class: 'remember-me-label' %>
+          </div>
+          <div class = 'div-links'>
+            <%= form.submit t('session.sign_in'), class: 'btn-ingresar'%>
+            <%= link_to t('session.forgot_pw'), '/#', class: 'forgot-pw'%>
+            <div class='google'>
+              <%= image_tag("google_logo.png")%>
+              <%= link_to t('session.log_in_google'), '/#', class: 'ingreso-google'%>
             </div>
           </div>
-          <%end%>
+        <%end%>
       </div>
-    </div>  
+    </div>
   </section>
-
 </main>

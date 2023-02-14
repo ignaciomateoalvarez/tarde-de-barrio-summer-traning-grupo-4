@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy toggle_active]
   before_action :ensure_frame_response, only: %i[new edit]
@@ -40,7 +42,6 @@ class UsersController < ApplicationController
   def update
     authorize current_user
     @user = User.find(params[:id])
-
     if @user.update(user_params)
       redirect_to users_path
     else
@@ -74,7 +75,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
+  
   # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation, :role)
@@ -90,5 +91,4 @@ class UsersController < ApplicationController
     return unless Rails.env.development?
     redirect_to root_path unless turbo_frame_request?
   end
-
 end

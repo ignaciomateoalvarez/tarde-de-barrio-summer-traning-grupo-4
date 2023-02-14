@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -16,5 +18,4 @@ RSpec.describe User, type: :model do
     it { is_expected.to_not allow_value('namedoman.com').for(:email) }
     it { is_expected.to_not allow_value('name@domancom').for(:email) }
   end
-  
 end
