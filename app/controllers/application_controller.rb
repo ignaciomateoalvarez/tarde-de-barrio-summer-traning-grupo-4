@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include Pundit::Authorization
@@ -5,5 +7,4 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     redirect_to homes_path
   end
-
 end

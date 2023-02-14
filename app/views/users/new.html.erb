@@ -3,43 +3,38 @@
                       turbo_modal_target: "modal",
                       action: "turbo:submit-end->turbo-modal#submitEnd keyup@window->turbo-modal#closeWithKeyboard click@window->turbo-modal#closeBackground" },
                       class: "p-5 bg-slate-300 absolute z-10 top-10 right-10 rounded-md w-96 break-words" do %>
-<%=tag.h1 t('user.create'), class: "edit-h1"%>
+ <%=tag.h1 t('user.create'), class: "edit-h1"%>
 
-<%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label t('user.name') %><br>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label t('user.surname') %><br>
-    <%= form.text_field :lastname %>
-  </div>
-
-  <div>
-    <%= form.label t('user.email') %><br>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-  <%= form.label t('user.rol') %><br>
-  <%= form.select :role, User.roles.keys, include_blank: false%>
-</div>
-
-  <div>
-    <%= form.label t('session.pw') %><br>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.label t('session.pw') %><br>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div>
-    <%= form.submit t('user.create_user'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
-    <%= button_tag t('user.close'),  data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+  <%= form_with model: @user do |form| %>
+    <div>
+      <%= form.label t('user.name') %><br>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label t('user.surname') %><br>
+      <%= form.text_field :lastname %>
+    </div>
+    <div>
+      <%= form.label t('user.email') %><br>
+      <%= form.text_field :email %>
+    </div>
+    <div>
+      <%= form.label t('user.rol') %><br>
+      <%= form.select :role, User.roles.keys, include_blank: false%>
+    </div>
+    <div>
+      <%= form.label t('session.pw') %><br>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <%= form.label t('session.pw') %><br>
+      <%= form.password_field :password_confirmation %>
+    </div>
+    <div>
+      <%= form.submit t('user.create_user'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
+      <%= button_tag t('user.close'),  data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+      <% end %>
+    </div>
   <% end %>
-  </div>
-<% end %>
 <% end %>
 

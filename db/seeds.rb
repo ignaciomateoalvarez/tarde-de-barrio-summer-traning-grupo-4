@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,8 +8,22 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create(name: 'Carla', lastname: 'Campetella', email: 'carlacampetella@gmail.com', password: '1234', password_confirmation: '1234', is_active: true, role: 0)
-User.create(name: 'Camila', lastname: 'Tisera', email: 'camilatisera@gmail.com',password: '1234', password_confirmation: '1234', is_active: false, role: 0)
-User.create(name: 'Cristian', lastname: 'Martin', email: 'cristianmartin@gmail.com', password: '1234', password_confirmation: '1234', is_active: true, role: 1)
-User.create(name: 'Sol', lastname: 'Gonzales', email: 'solgonzales@gmail.com', password: '1234', password_confirmation: '1234', is_active: true, role: 1)
-User.create(name: 'Jose', lastname: 'Martín', email: 'josemartin@gmail.com', password: '1234', password_confirmation: '1234', is_active: true, role: 1)
+require 'faker'
+require 'factory_bot_rails'
+
+User.create(name: 'Carla', lastname: 'Campetella', email: 'admin@admin.com', password: 'admin',
+  password_confirmation: 'admin', is_active: true, role: 0)
+
+30.times do
+  User.create(
+    name: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    email: Faker::Internet.unique.email,
+    password: 'holahola',
+    password_confirmation: 'holahola',
+    is_active: true,
+    role: 1
+  )
+end
+
+FactoryBot.create_list(:student, 20)

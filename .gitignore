@@ -25,3 +25,6 @@ config/initializers/app_config.rb
 # Ignore application configuration
 /config/application.yml
 .dumps/
+
+#Ignore db credentials
+/config/database.yml

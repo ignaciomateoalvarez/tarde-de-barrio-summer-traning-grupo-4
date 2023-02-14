@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RegistrationsController < ApplicationController
   def new
     @user = User.new
@@ -17,5 +19,4 @@ class RegistrationsController < ApplicationController
   def user_params
     params.permit(:name, :lastname, :email, :password, :password_confirmation)
   end
-
 end
