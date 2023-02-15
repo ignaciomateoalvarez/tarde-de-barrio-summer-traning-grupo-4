@@ -1,0 +1,14 @@
+.container-students{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-students{
+  background-color: white;
+  width: 80%;
+}
+
+.table-students table{
+
+}
