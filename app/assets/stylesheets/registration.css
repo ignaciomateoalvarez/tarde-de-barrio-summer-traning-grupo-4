@@ -5,9 +5,9 @@
   font-family: 'Roboto';
 }
 
-body {
+.background {
   background: #0090AF;
-
+  height: 100vh;
 }
 
 .section-form {

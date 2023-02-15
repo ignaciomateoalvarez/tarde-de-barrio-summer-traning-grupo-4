@@ -8,7 +8,7 @@ class Student < ApplicationRecord
   enum school_grade: { Inicial: 0, Primaria: 1, Secundaria: 2 }
 
   def age
-    age = (Date.today - self.birthdatete)/365.25
+    age = (Date.today - self.birthdate)/365.25
     age.to_int
   end
 

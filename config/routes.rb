@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       put 'toggle_active', to: 'users#toggle_active'
     end
   end
+  resources :students
 
   resources :homes, only: [:index]
   get 'logout' => 'sessions#destroy', :as => 'logout'
