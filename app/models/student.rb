@@ -1,7 +1,6 @@
 class Student < ApplicationRecord
-  validates :name, :lastname, :email, :birthdate, :address, :school_grade, presence: true
+  validates :name, :lastname, :birthdate, :address, :school_grade, presence: true
   validates_format_of :name, :lastname, { with: /\A[a-zA-ZñÑ\u00C0-\u017F']+[\s?[a-zA-ZñÑ\u00C0-\u017F']]\z/ }
-  validates_format_of :email, { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validate :cant_be_future
   validates :active_student, inclusion: { in: [true, false] }
 

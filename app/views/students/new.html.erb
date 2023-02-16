@@ -1,0 +1,59 @@
+<%= turbo_frame_tag "modal" do %>
+  <%= tag.div data: { controller: "turbo-modal",
+                      turbo_modal_target: "modal",
+                      action: "turbo:submit-end->turbo-modal#submitEnd keyup@window->turbo-modal#closeWithKeyboard click@window->turbo-modal#closeBackground" },
+                      class: "p-5 bg-slate-300 absolute z-10 top-10 right-10 rounded-md w-96 break-words" do %>
+  <div class="container-modal">
+    <div class="edit-h1">
+      <%=tag.h1 t('student.create')%>
+    </div>
+    <div class="form-modal">
+      <%= form_with model: @student do |form| %>
+        <div class="input-modal">
+          <%= form.label t('student.name') %>
+          <%= form.text_field :name, required: true %>
+          <%= render 'msg', errors:@student.errors.messages_for(:name) %>
+        </div>
+        <div class="input-modal">
+          <%= form.label t('student.surname') %>
+          <%= form.text_field :lastname, required: true  %>
+          <%= render 'msg', errors:@student.errors.messages_for(:lastname) %>
+        </div>
+        <div class="input-modal">
+          <%= form.label t('student.address') %>
+          <%= form.text_field :address, required: true  %>
+        </div>
+        <div class="input-modal">
+          <%= form.label t('student.birthdate') %>
+          <%= form.date_field :birthdate, required: true  %>
+          <%= render 'msg', errors:@student.errors.messages_for(:birthdate) %>
+        </div>
+        <div class="input-modal">
+          <%= form.label t('student.scholarship') %>
+          <%= form.select :school_grade, Student.school_grades.keys, include_blank: false, required: true %>
+        </div>
+
+        <div class="radio-button-modal">
+          <div class="active-question">
+            <%= label_tag :active_student, t('student.active_student') %>
+          </div>
+          <div class="both-radio">
+            <div class="radio-yes">
+              <%= form.radio_button :active_student, true %>
+              <%= label_tag t('student.yes') %>
+            </div>
+            <div class="radio-no">
+              <%= form.radio_button :active_student, false %>
+              <%= label_tag t('student.no') %>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-modal">
+          <%= form.submit t('student.create_student'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
