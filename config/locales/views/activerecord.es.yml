@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    errors:
+      models:
+        student:
+          attributes:
+            name:
+              invalid: 'El nombre solo puede contener letras'
+            lastname:
+              invalid: 'El apellido solo puede contener letras'
+            birthdate:
+              invalid: 'La fecha tiene que ser valida'

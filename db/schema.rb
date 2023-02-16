@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_142329) do
   create_table "students", force: :cascade do |t|
     t.string "name", null: false
     t.string "lastname", null: false
-    t.string "email", null: false
     t.date "birthdate", null: false
     t.string "address"
     t.integer "school_grade", default: 0

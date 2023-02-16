@@ -3,7 +3,6 @@
 <p style="color: green"><%= notice %></p>
 <%=tag.h1 t('user.user'), class:"user-titulo"%>
 <%= link_to "Estudiantes", students_path %>
-<body class="user-body">
   <div class="user-form-users">
     <%= link_to t('home.cerrar_sesion'), logout_path, class:'logout-btn' %>
     <div class="user-users-button">
@@ -15,6 +14,8 @@
         <% end %>
       <% end %>
     </div>
+<div class="container-students">
+  <div class="table-students">
     <table>
       <tr>
         <%=tag.th  t('user.name'), class:'user-th-name'%>
@@ -44,6 +45,7 @@
         </tr>
       <% end %>
     </table>
+    </div>
     <%== pagy_nav(@pagy) %>
   </div>
 </body>

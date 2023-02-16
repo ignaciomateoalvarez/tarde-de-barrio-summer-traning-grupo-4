@@ -23,8 +23,6 @@ RSpec.describe Student, type: :model do
     end
   end
   describe 'Format' do
-    it { is_expected.to allow_value('valid@email.com').for(:email) }
-    it { is_expected.not_to allow_value('invalidEmail').for(:email) }
     it { is_expected.to allow_value('Julián').for(:name) }
     it { is_expected.not_to allow_value('Julian777*').for(:name) }
     it { is_expected.to allow_value('Alvarez').for(:lastname) }

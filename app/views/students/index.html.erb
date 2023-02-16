@@ -1,34 +1,43 @@
 <%= render "partials/navbar" %>
 <div class="search-student">
-  <%= form_with(model: @presenter.filter, url: students_path, method: :get) do |form| %>
-    <%= form.text_field :query %>
-    <%= form.submit t('user.search') %>
-  <% end %>
+  <div class="search-box">
+    <%= form_with(model: @presenter.filter, url: students_path, method: :get) do |form| %>
+      <div class="search-container">
+        <%= form.text_field :query %>
+      </div>
+      <div>
+        <%= button_tag :submit do %>
+          <i class='search-icon'></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Crear estudiante", new_student_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' %>
 </div>
 <div class="container-students">
   <div class="table-students">
     <table>
       <thead>
         <tr>
-          <th> ESTUDIANTES </th>
-          <th> EDAD </th>
-          <th> ESCOLARIDAD ALCANZADA </th>
-          <th> ESCOLARIZADO </th>
-          <th> </th>
+          <th><%= t('student.student') %></th>
+          <th><%= t('student.birthdate') %></th>
+          <th><%= t('student.scholarship') %></th>
+          <th><%= t('student.active_student') %></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @presenter.students.each do |student| %>
           <tr>
-          <td> <%= student.full_name %> </td>
-          <td><%= student.ages %> </td>
-          <td><%= student.school_grade %> </td>
-          <td><%= student.escolarizado %> </td>
-          <td> "editar" </td>
-        </tr>
+            <td><%= student.full_name %></td>
+            <td><%= student.ages %></td>
+            <td><%= student.school_grade %></td>
+            <td><%= student.escolarizado %></td>
+            <td> "editar" </td>
+          </tr>
         <% end %>
       </tbody>
-      <%== pagy_nav(@presenter.pagynate) %>
     </table>
   </div>
+  <%== pagy_nav(@presenter.pagynate) %>
 </div>

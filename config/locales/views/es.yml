@@ -1,5 +1,4 @@
 es:
-  hello: "Hola Mundo"
   session: 
     session_: 'Iniciar sesión'
     sign_up: 'Registro'

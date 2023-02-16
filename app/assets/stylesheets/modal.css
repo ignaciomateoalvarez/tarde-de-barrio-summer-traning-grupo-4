@@ -1,0 +1,73 @@
+.container-modal {
+  width: 100%;
+}
+
+.input-modal{
+  width: 80%;
+  height: 2rem;
+  margin: auto;
+  display:block;
+  margin-top:1.7rem;
+  text-align: -webkit-left;
+}
+
+.input-modal input {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: 1.29514px solid #CCCCCC;
+  border-radius: 7.06992px;
+  padding: 0.3rem;
+}
+
+.input-modal select {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: 1.29514px solid #CCCCCC;
+  border-radius: 7.06992px;
+  padding: 0.3rem;
+}
+
+.input-modal label {
+  text-align:left;
+}
+
+.radio-button-modal {
+  margin-top:1.7rem;
+  display:flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active-question {
+  text-align:left;
+  margin: 1rem 0;
+}
+
+.both-radio{
+  display:flex;
+  flex-direction: row;
+  text-align-last: left;
+  margin: 0 0.4rem;
+}
+
+.radio-yes, .radio-no {
+  width: 50%;
+}
+
+.button-modal input[type="submit"] {
+  background-color: #0090af;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+	margin: 20px 0;
+  background: #0090AF;
+  border-radius: 3.4537px; 
+  border:none;
+  width: 55%;
+}
+
+.button-modal input[type='submit']:hover {
+	background: #007792;
+}
