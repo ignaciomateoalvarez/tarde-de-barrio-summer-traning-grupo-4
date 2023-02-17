@@ -1,0 +1,188 @@
+#linea-detail{ 
+  border:  none;
+  border-left: 1px solid hsla(200, 10%, 50%,100);
+  height: 80vh;
+  width: 1px;       
+}
+
+.container-detail {
+  display: flex;
+}
+
+.student-data {
+padding: 0rem 1rem 0rem 1rem;
+width: 20%;
+}
+
+.student-data h2 {
+  margin-bottom: 2.5rem;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #474747;
+}
+.student-data h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0090AF;
+}
+
+.data-info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.historial {
+  width: 100%;
+  height: 4rem;
+}
+
+.data-info {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #474747;
+  margin-top: 0.5rem;
+}
+
+.title-info {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+color: #474747;
+margin-top: 1.5rem;
+}
+
+.container-comment{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 0rem 3.5rem;
+}
+
+.comment-icon {
+ padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: 24px;
+  height: 24px;
+}
+
+.comment-details textarea {
+  width: 100%;
+  background: #F1F3F4;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+  padding: 1rem;
+}
+
+.comment-details p {
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #474747;
+  padding-bottom: 1rem;
+}
+
+.post-button {
+  width: 135px;
+  height: 40px;
+  background: #0090AF;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.comment-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-button button {
+  background: inherit;
+  border: none;
+  padding: 1rem 1rem 1rem 0rem;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-size: 24px 24px;
+  display: inherit;
+}
+
+.smile {
+  background-image: url('smile.png');
+}
+
+.image {
+  background-image: url('image.png');
+}
+
+.comment-button input[type='checkbox'] {
+  height: 18px;
+  width: 18px;
+}
+
+.icons-button {
+  display: flex;
+  align-items: center;
+}
+
+.comment-button label {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.historial a {
+  color: inherit; 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #474747;
+}
+
+.historial {
+  padding: 1rem 1rem 1rem 1rem;
+  display: flex;
+}
+
+.student-actual {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0090AF;
+  font-weight: 600;
+}
+
+.signito {
+  color: #474747;
+}

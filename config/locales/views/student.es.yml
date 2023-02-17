@@ -17,3 +17,6 @@ es:
     student: 'Estudiante'
     "yes": 'Si'
     "no": 'No'
+  models:
+    student:
+      error_date: 'No se puede ingresar una fecha futura'
