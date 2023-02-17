@@ -15,7 +15,7 @@ class Student < ApplicationRecord
 
   def cant_be_future
     unless (birthdate.present? && !birthdate.future?)
-      errors.add(:birthdate, "Date can't be future")
+      errors.add(:birthdate, I18n.t('models.student.error_date'))
     else
       true
     end

@@ -32,7 +32,6 @@
           <%= form.label t('student.scholarship') %>
           <%= form.select :school_grade, Student.school_grades.keys, include_blank: false, required: true %>
         </div>
-
         <div class="radio-button-modal">
           <div class="active-question">
             <%= label_tag :active_student, t('student.active_student') %>
@@ -48,7 +47,6 @@
             </div>
           </div>
         </div>
-
         <div class="button-modal">
           <%= form.submit t('student.create_student'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
           <% end %>

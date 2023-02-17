@@ -9,4 +9,4 @@ es:
             lastname:
               invalid: 'El apellido solo puede contener letras'
             birthdate:
-              invalid: 'La fecha tiene que ser valida'
+              Date: 'La fecha tiene que ser valida'

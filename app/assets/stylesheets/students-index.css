@@ -133,3 +133,7 @@
   background-size: 24px 24px;
   display: inherit;
 }
+
+td a {
+color: inherit;
+}
