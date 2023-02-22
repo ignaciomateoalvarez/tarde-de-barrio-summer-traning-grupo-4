@@ -16,12 +16,6 @@
           <div class="d1">
             <%= tag.h1 t('session.sign_in_account'), class:"ingresar" %>
           </div>
-          <% if flash[:notice].present? %>
-            <%= flash[:notice] %>
-          <%end%>
-          <% if flash[:alert].present? %>
-            <p> <%= flash[:alert] %> </p>
-          <%end%>
           <div class="d2">
             <%= form.label t('session.email'), class: 'label'%>
             <%= form.text_field :email, placeholder: 'admin@admin.com', class: 'input-label' %>

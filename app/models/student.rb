@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
+  belongs_to :user
+
   validates :name, :lastname, :birthdate, :address, :school_grade, presence: true
-  validates_format_of :name, :lastname, { with: /\A[a-zA-ZñÑ\u00C0-\u017F']+[\s?[a-zA-ZñÑ\u00C0-\u017F']]\z/ }
+  validates_format_of :name, :lastname, { with: /\A[a-zA-ZÀ-ÖØ-öø-ÿ\s]+\z/ }
   validate :cant_be_future
   validates :active_student, inclusion: { in: [true, false] }
 

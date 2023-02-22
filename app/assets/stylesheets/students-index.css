@@ -88,7 +88,7 @@
   margin-right: 5%;
 }
 
-.search-student input {
+.search-container input {
   display: flex;
   background: #FAFAFA;
   border: 1.29514px solid #CCCCCC;
@@ -105,13 +105,16 @@
   margin-right: 0.5rem;
 }
 
-.search-icon {
-  background-image: url('search.png');
+.icon {
   background-repeat: no-repeat;
   height: 24px;
   width: 24px;
   background-size: 24px 24px;
   display: inherit;
+}
+
+.search {
+  background-image: url('search.png');
 }
 
 .search-box button{
@@ -136,4 +139,44 @@
 
 td a {
 color: inherit;
+}
+
+.student-table {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.table-students table tr td:first-child, .table-students table tr th:first-child {
+  text-align: left;
+}
+
+.error-msg{
+  background-color:rgb(255, 118, 118);
+  color: darkred;
+  border: solid 1px darkred;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  position: fixed;
+  top: 10%;
+}
+
+.notice-msg{
+  background-color: rgb(135, 255, 135);
+  color: darkgreen;
+  border: solid 1px darkgreen;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  position: fixed;
+  top: 10%;
+}
+
+.container-msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.edit-student-button {
+  padding: 0 1rem;
 }

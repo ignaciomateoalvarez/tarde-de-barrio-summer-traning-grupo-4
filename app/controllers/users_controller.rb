@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy toggle_active]
   before_action :ensure_frame_response, only: %i[new edit]
+  before_action :require_login
 
   # GET /users or /users.json
   def index
@@ -51,11 +52,8 @@ class UsersController < ApplicationController
 
   def toggle_active
     authorize current_user
-    if @user.is_active?
-      @user.update_attribute :is_active, false
-    else
-      @user.update_attribute :is_active, true
-    end
+    @user.toggle(:is_active)
+    @user.save
     redirect_to users_path
   end
 
@@ -90,5 +88,9 @@ class UsersController < ApplicationController
   def ensure_frame_response
     return unless Rails.env.development?
     redirect_to root_path unless turbo_frame_request?
+  end
+
+  def not_authenticated
+    redirect_to new_session_path, error: t('.not_authenticated')
   end
 end

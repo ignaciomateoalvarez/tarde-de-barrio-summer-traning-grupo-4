@@ -1,0 +1,16 @@
+<% if flash[:error].present? || flash[:notice].present? %>
+  <% flash.each do%>
+    <div class="container-msg">
+      <% if flash[:notice].present? %>
+        <div class="notice-msg">
+          <p id="notice"><%= flash[:notice] %></p>
+        </div>
+      <% end %>
+      <% if flash[:error].present? %>
+      <div class="error-msg">
+        <p id="error"><%= flash[:error] %></p>
+      </div>
+      <% end %>
+    </div>
+  <% end %> 
+<% end %>

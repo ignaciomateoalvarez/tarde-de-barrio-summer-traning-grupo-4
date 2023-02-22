@@ -5,10 +5,10 @@
                       class: "p-5 bg-slate-300 absolute z-10 top-10 right-10 rounded-md w-96 break-words" do %>
   <div class="container-modal">
     <div class="edit-h1">
-      <%=tag.h1 t('student.create')%>
+      <%=tag.h1 t('student.edit')%>
     </div>
     <div class="form-modal">
-      <%= form_with model: @student do |form| %>
+      <%= form_with model: @student do |form|%>
         <div class="input-modal">
           <%= form.label t('student.name') %>
           <%= form.text_field :name, required: true %>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="button-modal">
-          <%= form.submit t('student.create_button'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
+          <%= form.submit t('student.edit_button'), class: "rounded-lg py-3 px-5 bg-red-600 text-white"%>
           <% end %>
         </div>
       <% end %>

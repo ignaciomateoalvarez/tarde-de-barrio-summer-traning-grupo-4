@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user.present?
       if @user.is_active?
         if login(params[:email], params[:password])
-          redirect_back_or_to(homes_path, notice: t('login_success'))
+          redirect_back_or_to(users_path)
         else
           flash.now[:alert] = t('login_failed')
           render action: :new, status: :unprocessable_entity
@@ -24,8 +24,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if logout
-      redirect_to(root_path, notice: t('cerro_sesion'))
+    if logout()
+      redirect_to(root_path)
     else
       flash.now[:error] = t('error')
     end

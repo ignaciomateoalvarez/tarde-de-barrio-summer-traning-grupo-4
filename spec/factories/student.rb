@@ -6,5 +6,6 @@ FactoryBot.define do
     address { Faker::Address.full_address }
     school_grade { Student.school_grades.keys[rand(0..2)] }
     active_student { [true, false].sample }
+    user
   end
 end

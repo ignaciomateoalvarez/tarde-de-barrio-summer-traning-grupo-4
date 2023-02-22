@@ -23,7 +23,7 @@ Pagy::DEFAULT[:items] = 5 # default
 # Pagy::DEFAULT[:params]     = {}                              # default
 # Pagy::DEFAULT[:fragment]   = '#fragment'                     # example
 # Pagy::DEFAULT[:link_extra] = 'data-remote="true"'            # example
-# Pagy::DEFAULT[:i18n_key]   = 'pagy.item_name'                # default
+Pagy::DEFAULT[:i18n_key] = 'pagy.item_name'
 # Pagy::DEFAULT[:cycle]      = true                            # example
 # Pagy::DEFAULT[:request_path] = "/foo"                        # example
 
@@ -204,7 +204,7 @@ Pagy::DEFAULT[:items] = 5 # default
 #
 # Examples:
 # load the "de" built-in locale:
-# Pagy::I18n.load(locale: 'de')
+Pagy::I18n.load(locale: 'es')
 #
 # load the "de" locale defined in the custom file at :filepath:
 # Pagy::I18n.load(locale: 'de', filepath: 'path/to/pagy-de.yml')

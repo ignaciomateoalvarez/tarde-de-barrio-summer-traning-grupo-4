@@ -7,7 +7,7 @@
       </div>
       <div>
         <%= button_tag :submit do %>
-          <i class='search-icon'></i>
+          <i class='search icon'></i>
         <% end %>
       </div>
     <% end %>
@@ -20,9 +20,9 @@
       <thead>
         <tr>
           <th><%= t('student.student') %></th>
-          <th><%= t('student.birthdate') %></th>
+          <th><%= t('student.age') %></th>
           <th><%= t('student.scholarship') %></th>
-          <th><%= t('student.active_student') %></th>
+          <th><%= t('student.student_active') %></th>
           <th></th>
         </tr>
       </thead>
@@ -33,7 +33,13 @@
             <td><%= student.ages %></td>
             <td><%= student.school_grade %></td>
             <td><%= student.escolarizado %></td>
-            <td> "editar" </td>
+            <td class="edit-student-button">
+              <% if policy(student).edit? %>
+                <%= link_to edit_student_path(student), data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground' } do %>
+                  <%= image_tag "edit.svg" %>
+                <% end %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
