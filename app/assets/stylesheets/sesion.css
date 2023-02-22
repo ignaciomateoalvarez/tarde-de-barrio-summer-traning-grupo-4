@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .div-rectangle {
@@ -107,7 +106,6 @@ h2.ingresar {
   line-height: 1.125rem;
   text-align: center;
   color: #FFFFFF;
-
 }
 
 
@@ -176,7 +174,6 @@ a.forgot-pw {
 
 
 .google { 
-
   border: #0090AF 0.0625rem;
   border-style: solid;
   width: 14.5694rem;
@@ -193,7 +190,6 @@ a.forgot-pw {
   text-align: center;
   justify-content: center;
   align-items: center;
-
 }
 
 div.google img {
@@ -222,3 +218,7 @@ div.google img {
   padding: 0.625rem;
 }
 
+.logged-user {
+  padding-left: 1rem;
+  color: white;
+}

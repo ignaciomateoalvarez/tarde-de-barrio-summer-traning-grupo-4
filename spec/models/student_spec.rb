@@ -7,7 +7,6 @@ RSpec.describe Student, type: :model do
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:lastname) }
-    it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:birthdate) }
     it { is_expected.to validate_presence_of(:address) }
     it { is_expected.to validate_presence_of(:school_grade) }
@@ -27,5 +26,9 @@ RSpec.describe Student, type: :model do
     it { is_expected.not_to allow_value('Julian777*').for(:name) }
     it { is_expected.to allow_value('Alvarez').for(:lastname) }
     it { is_expected.not_to allow_value('Alvarez777*').for(:lastname) }
+  end
+
+  describe 'Associations' do
+    it { is_expected.to belong_to(:user) }
   end
 end

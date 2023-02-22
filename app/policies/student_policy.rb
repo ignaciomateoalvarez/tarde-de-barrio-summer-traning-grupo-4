@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserPolicy < ApplicationPolicy
+class StudentPolicy < ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -12,8 +12,12 @@ class UserPolicy < ApplicationPolicy
     create?
   end
 
+  def index?
+    user.present? && user.is_active?
+  end
+
   def create?
-    user.admin?
+    user.is_active?
   end
 
   def edit?
@@ -21,10 +25,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    user.admin? || (record.user == user)
   end
 
-  def toggle_active?
+  def toggle_active
     user.admin?
   end
 end

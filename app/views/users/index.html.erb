@@ -1,51 +1,63 @@
 <%= render "partials/navbar" %>
 
-<p style="color: green"><%= notice %></p>
-<%=tag.h1 t('user.user'), class:"user-titulo"%>
-<%= link_to "Estudiantes", students_path %>
-  <div class="user-form-users">
-    <%= link_to t('home.cerrar_sesion'), logout_path, class:'logout-btn' %>
-    <div class="user-users-button">
-      <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+
+<div class="search-student">
+  <div class="search-box">
+    <%= form_with(model: @filter, url: users_path, method: :get) do |form| %>
+      <div class="search-container">
         <%= form.text_field :query %>
-        <%= form.submit t('user.search') %>
-        <% if policy(current_user).new?%>
-          <%= link_to t('user.create'), new_user_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' %>
+      </div>
+      <div>
+        <%= button_tag :submit do %>
+          <i class='search icon'></i>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <% if policy(current_user).new?%>
+      <%= link_to t('user.create'), new_user_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' %>
+    <% end %>
+  </div>
+</div>
 <div class="container-students">
   <div class="table-students">
     <table>
       <tr>
-        <%=tag.th  t('user.name'), class:'user-th-name'%>
-        <%=tag.th  t('user.surname'), class:'user-th-lastname'%>
-        <%=tag.th  t('user.email'), class:'user-th-email'%>
+        <%=tag.th  t('user.name')%>
+        <%=tag.th  t('user.surname')%>
+        <%=tag.th  t('user.email')%>
         <% if policy(current_user).edit?%>
-        <%=tag.th t('user.rol'), class:'user-th-name'%>
-        <%=tag.th t('user.activate'), class:'user-th-name'%>
-        <%=tag.th  t('user.edit'), class:'user-th-edit'%>
+        <%=tag.th t('user.rol')%>
+        <%=tag.th t('user.activate')%>
+        <th></th>
         <% end %>
       </tr>
       <% @users.each do |user| %>
         <tr>
-          <td class="user-td-name" ><%= user.name %></td>
-          <td class="user-td-lastname" ><%= user.lastname %></td>
-          <td class="user-td-email" ><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td><%= user.lastname %></td>
+          <td><%= user.email %></td>
           <% if policy(current_user).edit? %>
-            <td class="user-td-rol"> <%= user.role%>
+            <td> <%= user.role%>
             <td class="user-td-toggle" data-controller='toggle' data-toggle-url-value="<%=toggle_active_user_path(user.id)%>">
               <label class="switch">
-                <input type="checkbox" data-action='click->toggle#userActivate' <% if user.is_active?%> checked <%end%> />
+                <input type="checkbox" data-action='click->toggle#userActivate' <% if user.is_active? %> checked <% end %> />
                 <span class="slider round"></span>
               </label>
             </td>
-            <%= tag.td link_to t('user.edit'), edit_user_path(user), data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-edit-button' %>
+            <td class="edit-student-button">
+              <% if policy(user).edit? %>
+                <%= link_to edit_user_path(user), data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground' } do %>
+                  <%= image_tag "edit.svg" %>
+                <% end %>
+              <% end %>
+            </td>
           <% end %>
         </tr>
       <% end %>
     </table>
-    </div>
-    <%== pagy_nav(@pagy) %>
   </div>
+  <%== pagy_nav(@pagy) %>
+</div>
 </body>

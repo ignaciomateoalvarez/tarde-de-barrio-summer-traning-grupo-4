@@ -33,6 +33,7 @@ gem 'jbuilder'
 
 gem 'draper'
 
+gem 'inline_svg'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

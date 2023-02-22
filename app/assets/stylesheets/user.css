@@ -103,13 +103,6 @@ th, td {
   background: #007089;
 }
 
-#user_filter_query {
-  background: #FAFAFA;
-  border: 0.0809rem solid #CCCCCC;
-  border-radius: 0.4419rem;
-  padding: 0.5rem 0.875rem;
-}
-
 a {
   text-decoration: none;
 }

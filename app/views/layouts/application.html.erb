@@ -12,6 +12,7 @@
   </head>
   <body>
     <div hidden id="modal-background" class="modal-background"></div>
+    <%= render '/partials/msg', flash: flash %>
     <%= turbo_frame_tag "modal" %>
     <%= yield %>
   </body>

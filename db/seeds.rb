@@ -11,19 +11,7 @@
 require 'faker'
 require 'factory_bot_rails'
 
-User.create(name: 'Carla', lastname: 'Campetella', email: 'admin@admin.com', password: 'admin',
+admin = User.create(name: 'Carla', lastname: 'Campetella', email: 'admin@admin.com', password: 'admin',
   password_confirmation: 'admin', is_active: true, role: 0)
-
-30.times do
-  User.create(
-    name: Faker::Name.first_name,
-    lastname: Faker::Name.last_name,
-    email: Faker::Internet.unique.email,
-    password: 'holahola',
-    password_confirmation: 'holahola',
-    is_active: true,
-    role: 1
-  )
-end
 
 FactoryBot.create_list(:student, 20)

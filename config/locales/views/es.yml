@@ -36,6 +36,7 @@ es:
     pw: 'Contraseña'
     modifUser: 'Modificar usuario'
     user: 'Usuario'
+    not_authenticated: 'Debes estar loggeado para acceder'
 
   error: 'Error'
   cerro_sesion: 'Cerró Sesión'
