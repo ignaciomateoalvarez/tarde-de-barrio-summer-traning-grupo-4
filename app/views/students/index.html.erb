@@ -1,4 +1,3 @@
-<%= render "partials/navbar" %>
 <div class="search-student">
   <div class="search-box">
     <%= form_with(model: @presenter.filter, url: students_path, method: :get) do |form| %>
@@ -12,7 +11,10 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Crear estudiante", new_student_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' %>
+    <%= link_to new_student_path, data: { turbo_frame: 'modal', controller: 'modal', action: 'click->modal#toggleBackground'  }, class:'user-create-button' do %>
+      <%= image_tag 'add_user.svg' %>
+      <span class="text-button"> <p><%= t('student.register_button') %></p></span>
+  <% end %>
 </div>
 <div class="container-students">
   <div class="table-students">
@@ -39,6 +41,17 @@
                   <%= image_tag "edit.svg" %>
                 <% end %>
               <% end %>
+            </td>
+            <td>
+            <div class='delete-student-container'>
+              <div data-controller="modal">
+                <span data-action= "click->modal#hideModal", class="delete-btn"> <%=image_tag 'trash-2.svg'%> </span>
+                <div class='modal-delete hidden' data-modal-target="hideButton">
+                  <p class='text-modal-delete'> <%= t('student.confirm_delete') %> </p>
+                <%= button_to "Eliminar", student_path(student), type: "button", class:"delete-btn-modal", method: :delete%>
+                </div>
+              </div>
+            </div>  
             </td>
           </tr>
         <% end %>

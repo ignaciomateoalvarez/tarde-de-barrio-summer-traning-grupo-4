@@ -31,4 +31,12 @@ class StudentPolicy < ApplicationPolicy
   def toggle_active
     user.admin?
   end
+
+  def delete?
+    destroy?
+  end
+
+  def destroy?
+    user.admin?
+  end
 end

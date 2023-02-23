@@ -22,6 +22,12 @@ es:
     edit_button: 'Guardar cambios'
     "yes": 'Si'
     "no": 'No'
+    register_button: 'Nuevo estudiante'
+    confirm_delete: '¿Seguro deseas eliminar este estudiante?'
+  students:
+    destroy:
+      destroy_success: 'Estudiante eliminado con exito'
+      destroy_error: 'No se a podido eliminar el estudiante'
   models:
     student:
       error_date: 'No se puede ingresar una fecha futura'

@@ -10,6 +10,7 @@ es:
     forgot_pw: 'Olvidé mi contraseña'
     log_in_google: 'Ingresar con Google' 
     regist: 'Registrarse'
+    logout_button: 'Cerrar sesion'
 
   home:
     title: 'Pagina de Inicio'
@@ -37,6 +38,7 @@ es:
     modifUser: 'Modificar usuario'
     user: 'Usuario'
     not_authenticated: 'Debes estar loggeado para acceder'
+    register_button: 'Nuevo usuario'
 
   error: 'Error'
   cerro_sesion: 'Cerró Sesión'

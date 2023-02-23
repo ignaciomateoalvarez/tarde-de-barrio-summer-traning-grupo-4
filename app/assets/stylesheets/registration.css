@@ -41,8 +41,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1fr, 4);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
   justify-content: center;
   align-items: center;
   */

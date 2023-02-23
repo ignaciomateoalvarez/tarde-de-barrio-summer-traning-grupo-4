@@ -28,7 +28,7 @@
 }
 
 .table-students table tbody tr{
-  margin: 10px 0;
+  margin: 0.625rem 0;
 }
 
 .table-students table tr td:first-child{
@@ -37,12 +37,12 @@
 
 .tr-table{
   background-color: red;
-  border: 2px solid black !important;
+  border: 0.125rem solid black !important;
 }
 
 /* Todos los TR */
 .table-students table tr td{
-  border-top: 2px solid #DADADA;
+  border-top: 0.125rem solid #DADADA;
 }
 
 /* Primer TR */
@@ -56,25 +56,25 @@
 
 /* TR intermedios - primer TD */
 .table-students table tr td:first-child {
-  border: 2px solid #DADADA;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
+  border: 0.125rem solid #DADADA;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
   border-bottom:none;
   border-right:none;
 }
 
 /* TRs intermedio - Ultimo TD */
 .table-students table tr td:last-child {
-  border: 2px solid #DADADA;
-  border-bottom-right-radius: 8px;
-  border-top-right-radius: 8px;
+  border: 0.125rem solid #DADADA;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   border-bottom: none;
   border-left:none;
 }
 
 /* Ultimo TD - TRs intermedios */
 .table-students table tr:last-child td {
-  border-bottom: 2px solid #DADADA;
+  border-bottom: 0.125rem solid #DADADA;
 }
 
 .search-student {
@@ -91,12 +91,12 @@
 .search-container input {
   display: flex;
   background: #FAFAFA;
-  border: 1.29514px solid #CCCCCC;
+  border: 0.0809rem solid #CCCCCC;
   border-right:none;
-  border-top-left-radius: 7.06992px;
-  border-bottom-left-radius: 7.06992px;
+  border-top-left-radius: 0.4419rem;
+  border-bottom-left-radius: 0.4419rem;
   padding: 0.5rem;
-  width: 400px;
+  width: 25rem;
 }
 
 .search-box form{
@@ -107,9 +107,9 @@
 
 .icon {
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-size: 24px 24px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-size: 1.5rem 1.5rem;
   display: inherit;
 }
 
@@ -120,10 +120,10 @@
 .search-box button{
   height: 100%;
   width: 100%;
-  border-top-right-radius: 7.06992px;
-  border-bottom-right-radius: 7.06992px;
+  border-top-right-radius: 0.4419rem;
+  border-bottom-right-radius: 0.4419rem;
   background: #FAFAFA;
-  border: 1.29514px solid #CCCCCC;
+  border: 0.0809rem solid #CCCCCC;
   border-left:none;
   padding-right:0.5rem;
 }
@@ -131,9 +131,9 @@
 .new-student-icon {
   background-image: url('new-user-icon.png');
   background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-size: 24px 24px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-size: 1.5rem 1.5rem;
   display: inherit;
 }
 
@@ -154,7 +154,7 @@ color: inherit;
 .error-msg{
   background-color:rgb(255, 118, 118);
   color: darkred;
-  border: solid 1px darkred;
+  border: solid 0.0625rem darkred;
   border-radius: 0.3rem;
   padding: 0.5rem;
   position: fixed;
@@ -164,7 +164,7 @@ color: inherit;
 .notice-msg{
   background-color: rgb(135, 255, 135);
   color: darkgreen;
-  border: solid 1px darkgreen;
+  border: solid 0.0625rem darkgreen;
   border-radius: 0.3rem;
   padding: 0.5rem;
   position: fixed;
@@ -179,4 +179,67 @@ color: inherit;
 
 .edit-student-button {
   padding: 0 1rem;
+}
+
+.delete-student-container {
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  left: 2.5rem;
+  transform: translateY(50%);
+  bottom: 50%;
+  cursor: pointer;
+}
+
+.modal-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: absolute;
+  background: #DADADA;
+  border: 0.0625rem solid #D95234;
+  box-shadow: -0.125rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 25rem;
+  height: 10.9375rem;
+  left: -23.6rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.modal-delete::before {
+  content:"";
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%) translateX(50%);
+  border: 0.0625rem solid #D95234;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.875rem 0 1.875rem 1.875rem;
+  border-color: transparent transparent transparent #DADADA;
+}
+
+.text-modal-delete {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: #474747;
+}
+
+.delete-btn-modal {
+  width: 7.3125rem;
+  height: 2.0625rem;
+  background: #0090AF;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  color: white;
+  border: none;
 }

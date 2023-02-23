@@ -90,16 +90,33 @@ th, td {
 
 }
 
-.user-create-button, .user-edit-button, .logout-btn { 
+.user-create-button, .user-edit-button, .logout-btn{
   padding: 0.5rem;
   gap: 0.625rem;
   background: #0090AF;
   border-radius: 0.25rem;
   color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.user-create-button:hover , .user-edit-button:hover , .logout-btn:hover{
+.logout-btn {
+  position: absolute;
+  color: #343A40;
+  cursor:pointer;
+  background: white;
+  box-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 76, 92, 0.2);
+  border-radius: 0.25rem;
+}
+
+.logout-btn:hover{
+  background-color: #0090AF;
+  color:white;
+}
+
+.user-create-button:hover , .user-edit-button:hover{
   background: #007089;
 }
 
@@ -173,5 +190,4 @@ input:checked + .slider:before {
 
 .logout-btn {
   align-self: flex-end;
-  margin-right: 1.25rem;
 }

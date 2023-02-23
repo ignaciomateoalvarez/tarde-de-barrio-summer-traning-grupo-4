@@ -13,7 +13,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    user.is_active?
   end
 
   def edit?
