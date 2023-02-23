@@ -21,11 +21,11 @@ default: &default
 
 development:
   <<: *default
-  url: postgres://lautaro:root@localhost/product_dev
+  url: postgres://postgres:root@localhost/product_dev
 
 test:
   <<: *default
-  url: postgres://lautaro:root@localhost/product_test
+  url: postgres://postgres:root@localhost/product_test
 
 production:
   <<: *default

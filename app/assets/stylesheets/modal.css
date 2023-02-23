@@ -14,16 +14,16 @@
 .input-modal input {
   width: 100%;
   background-color: #FAFAFA;
-  border: 1.29514px solid #CCCCCC;
-  border-radius: 7.06992px;
+  border: 0.0809rem solid #CCCCCC;
+  border-radius: 0.4419rem;
   padding: 0.3rem;
 }
 
 .input-modal select {
   width: 100%;
   background-color: #FAFAFA;
-  border: 1.29514px solid #CCCCCC;
-  border-radius: 7.06992px;
+  border: 0.0809rem solid #CCCCCC;
+  border-radius: 0.4419rem;
   padding: 0.3rem;
 }
 
@@ -61,9 +61,9 @@
   color: white;
   padding: 0.5rem;
   cursor: pointer;
-	margin: 20px 0;
+	margin: 1.25rem 0;
   background: #0090AF;
-  border-radius: 3.4537px; 
+  border-radius: 0.2159rem; 
   border:none;
   width: 55%;
 }

@@ -35,8 +35,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1fr, 4);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
   justify-content: center;
   align-items: center;
   */
@@ -117,7 +117,7 @@ label {
   line-height: 0.9375rem;
   color: #000000;
   text-align: left;
-  padding: 5px;
+  padding: 0.3125rem;
 }
 
 .input-label {
@@ -219,6 +219,14 @@ div.google img {
 }
 
 .logged-user {
-  padding-left: 1rem;
+  position:absolute;
+  right:0;
+  padding-right: 1rem;
   color: white;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  filter: invert(10%) sepia(85%) saturate(6989%) hue-rotate(7deg)
+    brightness(78%) contrast(112%);
 }

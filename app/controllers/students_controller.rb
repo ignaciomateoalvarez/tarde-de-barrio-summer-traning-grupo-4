@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :ensure_frame_response, only: %i[new edit]
-  before_action :set_student, only: %i[show edit update]
+  before_action :set_student, only: %i[show edit update destroy]
   before_action :require_login
 
   def index
@@ -24,6 +24,15 @@ class StudentsController < ApplicationController
   end
 
   def show; end
+
+  def destroy
+    authorize @student
+    if @student.destroy
+      redirect_to students_path, notice: t('.destroy_success')
+    else
+      redirect_to students_path, error: t('.destroy_error')
+    end
+  end
 
   def edit
     authorize @student

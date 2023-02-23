@@ -13,6 +13,7 @@
   <body>
     <div hidden id="modal-background" class="modal-background"></div>
     <%= render '/partials/msg', flash: flash %>
+    <%= render "partials/navbar" if logged_in? %>
     <%= turbo_frame_tag "modal" %>
     <%= yield %>
   </body>

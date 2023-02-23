@@ -30,7 +30,7 @@
     text-align: center;
     left: 0;
     right: 0;
-    margin-top: 80px;
+    margin-top: 5rem;
     margin-right: auto;
     margin-left: auto;
     z-index: 2;
@@ -88,10 +88,30 @@
 .form-errors {
   color:rgb(160, 2, 2);
   font-size: x-small;
-  padding-left: 8px;
-  padding-top: 2px;
+  padding-left: 0.5rem;
+  padding-top: 0.125rem;
 }
 
 .pagy-nav {
   margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.logged-user strong {
+  user-select: none;
+}
+
+/* app/assets/stylesheets/application.scss */
+
+.hidden {
+  display: none;
+}
+
+.logout-container {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
 }
