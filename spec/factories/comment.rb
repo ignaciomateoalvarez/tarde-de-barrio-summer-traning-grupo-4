@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
-    body { "Hola hola hola" }
+    body
     user
     student
   end

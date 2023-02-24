@@ -9,7 +9,6 @@ RSpec.describe 'StudentController', type: :request do
   end
 
   describe 'GET index' do
-    # LOGUEAR UN USUARIO ANTES DE TESTEAR PARA QUE FUNCIONE BIEN
     before { get students_path }
     context 'when request is valid' do
       it { expect(response).to have_http_status(:ok) }
@@ -63,6 +62,20 @@ RSpec.describe 'StudentController', type: :request do
       student.reload
       expect(response).to have_http_status(:found)
       expect(response).to redirect_to(students_path)
+    end
+  end
+
+  describe 'Create comment' do
+    let!(:student) { create(:student) }
+    let!(:user) { create(:user) }
+    let!(:comment) { Comment.create(body: 'Comentario', user_id: user.id, student_id: student.id) }
+
+    it 'create comment for student with user' do
+      expect(comment.user).to eql(user)
+      expect(comment.student).to eql(student)
+    end
+    it 'should persist comment' do
+      expect(comment.persisted?).to be_truthy
     end
   end
 end
