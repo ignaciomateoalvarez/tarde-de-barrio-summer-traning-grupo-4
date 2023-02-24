@@ -1,0 +1,39 @@
+.comment-box {
+  border: 0.0625rem solid #DADADA;
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  position: relative;
+  margin: 0.625rem;
+}
+
+.comment-box img{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.comment-name{
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #0090AF;
+}
+
+.comment-name span{
+  color: black;
+  text-transform: capitalize;
+}
+
+.comment-body {
+  margin-top: 0.5rem;
+}
+
+.comment-day {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}

@@ -17,7 +17,7 @@ RSpec.describe Student, type: :model do
     it "Doesn't allow future dates" do
       student = build(:student, birthdate: Date.tomorrow)
       expect(student).to_not be_valid
-      expect(student.errors[:birthdate]).to include("No se puede ingresar una fecha futura")
+      expect(student.errors[:birthdate]).to include(I18n.t('models.student.error_date'))
     end
   end
   describe 'Format' do
@@ -29,6 +29,7 @@ RSpec.describe Student, type: :model do
 
   describe 'Associations' do
     it { is_expected.to belong_to(:user) }
+    it { should have_many(:comments) }
   end
 
   describe 'Remove Students' do
@@ -36,7 +37,7 @@ RSpec.describe Student, type: :model do
     it 'deletes student' do
       expect do
         delete :destroy, id => student.id
-        flash[:notice].should =~ 'El estudiante a sido eliminado correctamente'
+        flash[:notice].should =~ t('.destroy_success')
       end
     end
   end

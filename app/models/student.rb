@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   validates :name, :lastname, :birthdate, :address, :school_grade, presence: true
   validates_format_of :name, :lastname, { with: /\A[a-zA-ZÀ-ÖØ-öø-ÿ\s]+\z/ }

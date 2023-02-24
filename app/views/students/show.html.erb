@@ -1,49 +1,63 @@
 <div class='historial'>
-  <%= link_to "Estudiantes", students_path%>
+  <%= link_to t('student.students') , students_path%>
   <p class='signito'> &ensp; > &ensp; </p>
-  <p class='student-actual'>  <%=  @student.decorate.full_name%> </p>
+  <p class='student-actual'><%=@student.decorate.full_name%></p>
 </div>
 <div class='container-detail'>
   <div class="student-data"> 
-    <h2><%= @student.decorate.full_name%> </h2>
-    <h3> Datos del estudiante </h3>
+    <h2><%= @student.decorate.full_name%></h2>
+    <h3><%= t('student.data_title') %></h3>
     <div class='student-info'>
-      <p class='title-info'><%= t("student.birthdate")%> </p>
-      <p class='data-info'><%=  @student.birthdate%> </p>
+      <p class='title-info'><%= t("student.birthdate")%></p>
+      <p class='data-info'><%=  @student.birthdate%></p>
     </div>
     <div class='student-info'>
-      <p class='title-info'><%=  t("student.address") %> </p>
-      <p class='data-info'><%=  @student.address%> </p>
+      <p class='title-info'><%=  t("student.address") %></p>
+      <p class='data-info'><%=  @student.address%></p>
     </div>
     <div class='student-info'>
-      <p class='title-info'><%= t("student.scholarship")%> </p>
-      <p class='data-info'><%=  @student.school_grade%> </p>
+      <p class='title-info'><%= t("student.scholarship")%></p>
+      <p class='data-info'><%=  @student.school_grade%></p>
     </div>
     <div class='student-info'>
-      <p class='title-info'> Escolarizado </p>
-      <p class='data-info'><%=  @student.decorate.escolarizado%> </p> 
+      <p class='title-info'><%= t('student.student_active') %></p>
+      <p class='data-info'><%=  @student.decorate.escolarizado%></p> 
     </div>
   </div>
   <hr/>
   <div class='container-comment'>
     <div class='comment-details'>
-      <p> Comentarios </p>
-      <textarea name="textarea" rows="6" cols="50" placeholder="¿Qué deseas publicar?. Puedes utilizar “@” para mencionar personas."></textarea>
-      <div class='comment-button'>
-        <div class='icons-button'> 
-          <%= button_tag do %>
-            <i class='icon smile'></i>
-          <% end %>
-           <%= button_tag do  %>
-            <i class='icon image'></i>
-          <% end %>
-          <input type='checkbox' name='sarasa' value='1'> 
-          <label> Destacar publicación </label>
-        </div>
-        <div> 
-          <input type="submit",  value= "Publicar", class= "post-button" >
-        </div>
-      </div>  
+      <p><%= t('comments.title') %></p>
+      <%= form_with url: student_comment_path(@student), method: :post do %>
+        <textarea name="body" rows="6" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
+        <div class='comment-button'>
+          <div class='icons-button'> 
+            <%= button_tag do %>
+              <i class='icon smile'></i>
+            <% end %>
+            <%= button_tag do %>
+              <i class='icon image'></i>
+            <% end %>
+            <input type='checkbox' value='1'> 
+            <label><%= t('student.highlight_post')%></label>
+          </div>
+          <div> 
+            <input type="submit", value= "Publicar", class= "post-button">
+          </div>
+        </div>  
+      <% end %>
+    </div>
+    <div class="comments">
+      <% @comments_by_day.reverse.each do |key, value| %>
+        <p class="comment-day"><%= (key == Date.today) ? t('date.today') : value.first.decorate.format_date %></p>
+        <% value.reverse.each do |v| %>
+          <div class="comment-box">
+            <p class="comment-name"><%= v.user.full_name %><span><%= v.decorate.format_time %></span></p>
+              <%= image_tag "thumbs-up.svg"%>
+            <p class="comment-body"><%= v.body %></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

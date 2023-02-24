@@ -18,12 +18,15 @@ es:
     create_student: 'Crear estudiante'
     modify_student: 'Modificar estudiante'
     student: 'Estudiante'
+    students: 'Estudiantes'
     edit: 'Modificar estudiante'
     edit_button: 'Guardar cambios'
+    data_title: 'Datos del estudiante'
     "yes": 'Si'
     "no": 'No'
     register_button: 'Nuevo estudiante'
     confirm_delete: '¿Seguro deseas eliminar este estudiante?'
+    highlight_post: 'Destacar publicación'
   students:
     destroy:
       destroy_success: 'Estudiante eliminado con exito'
@@ -31,3 +34,6 @@ es:
   models:
     student:
       error_date: 'No se puede ingresar una fecha futura'
+  comments:
+    title: 'Comentarios'
+    placeholder: '¿Qué deseas publicar?. Puedes utilizar “@” para mencionar personas.'
