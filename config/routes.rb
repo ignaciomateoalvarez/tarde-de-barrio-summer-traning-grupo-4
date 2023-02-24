@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       put 'toggle_active', to: 'users#toggle_active'
     end
   end
-  resources :students
+  resources :students do
+    post 'comment', to: 'comments#create'
+  end
 
   resources :homes, only: [:index]
   get 'logout' => 'sessions#destroy', :as => 'logout'

@@ -39,12 +39,42 @@ es:
     user: 'Usuario'
     not_authenticated: 'Debes estar loggeado para acceder'
     register_button: 'Nuevo usuario'
-
   error: 'Error'
   cerro_sesion: 'Cerró Sesión'
   not_found: 'Usario no encontrado'
   user_disabled: 'Usuario deshabilitado'
   login_failed: 'Inicio de Sesión Fallido'
   login_success: 'Inicio de Sesión Éxitoso'
+  delete: 'Eliminar'
+  date:
+    today: 'Hoy'
+    day_names:
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - sábado
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+  time:
+    formats:
+      day_month_date: '%A %e de %B'
+      default: "%d/%m/%Y"
+      long: "%A, %d de %B de %Y"
+      short: "%d de %b"
 
   

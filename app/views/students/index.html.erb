@@ -48,7 +48,7 @@
                 <span data-action= "click->modal#hideModal", class="delete-btn"> <%=image_tag 'trash-2.svg'%> </span>
                 <div class='modal-delete hidden' data-modal-target="hideButton">
                   <p class='text-modal-delete'> <%= t('student.confirm_delete') %> </p>
-                <%= button_to "Eliminar", student_path(student), type: "button", class:"delete-btn-modal", method: :delete%>
+                <%= button_to t('delete'), student_path(student), type: "button", class:"delete-btn-modal", method: :delete%>
                 </div>
               </div>
             </div>  

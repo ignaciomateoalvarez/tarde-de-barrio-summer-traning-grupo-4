@@ -23,7 +23,9 @@ class StudentsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comments_by_day = @student.comments.group_by{ |c| c.created_at.to_date }.sort
+  end
 
   def destroy
     authorize @student

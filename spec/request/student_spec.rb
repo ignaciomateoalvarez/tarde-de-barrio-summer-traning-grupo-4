@@ -22,6 +22,18 @@ RSpec.describe 'StudentController', type: :request do
     login_user
   end
 
+  describe 'Create student' do
+    let!(:user) { login_user }
+    let!(:student) { build(:student) }
+    before { post students_path(:student) }
+    context 'When user is logged' do
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+        expect(response).to render_template(:index)
+      end
+    end
+  end
+
   describe 'GET index' do
     # LOGUEAR UN USUARIO ANTES DE TESTEAR PARA QUE FUNCIONE BIEN
     before { get students_path }

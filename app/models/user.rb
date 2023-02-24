@@ -15,6 +15,6 @@ class User < ApplicationRecord
   enum role: { admin: 0, colab: 1 }
 
   def full_name
-    puts(name + ' ' + lastname)
+    name + ' ' + lastname
   end
 end
