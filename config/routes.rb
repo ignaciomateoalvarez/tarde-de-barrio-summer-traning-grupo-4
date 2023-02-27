@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
   resources :students do
     post 'comment', to: 'comments#create'
-    post 'comment/:id/reply', to: 'comments#create_reply', as: 'comment_reply'
   end
 
   resources :homes, only: [:index]
