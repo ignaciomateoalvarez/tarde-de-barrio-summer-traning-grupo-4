@@ -6,6 +6,13 @@ class CommentsController < ApplicationController
     redirect_to @student
   end
 
+  def create_reply
+    @comment = Comment.find(params[:id])
+    @reply = @comment.replies.create(body: params[:body], user_id: current_user.id)
+
+    redirect_to @comment.student
+  end
+
   def set_student
     @student = Student.find(params[:student_id])
   end
