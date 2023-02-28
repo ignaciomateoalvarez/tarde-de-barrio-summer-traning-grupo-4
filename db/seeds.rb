@@ -11,7 +11,7 @@
 require 'faker'
 require 'factory_bot_rails'
 
-admin = User.create(name: 'Carla', lastname: 'Campetella', email: 'admin@admin.com', password: 'admin',
+admin = User.create(name: 'Juani', lastname: 'Bottassi', email: 'juani@gmail.com', password: 'admin',
   password_confirmation: 'admin', is_active: true, role: 0)
 
 FactoryBot.create_list(:student, 20)

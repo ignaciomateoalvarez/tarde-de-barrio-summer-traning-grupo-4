@@ -1,0 +1,16 @@
+.pagy-nav *{
+
+  padding: 0.3125rem;
+  color: black;
+}
+
+.pagy-nav .active{
+  color: #0090AF;
+}
+.pagy-nav .disabled{
+  display: none;
+}
+.pagy-nav:visited{
+
+  color: inherit;
+}

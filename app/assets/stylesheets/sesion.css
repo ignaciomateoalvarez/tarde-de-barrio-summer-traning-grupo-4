@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 10%;
 }
 
 .div-rectangle {
@@ -20,7 +21,7 @@
   align-items: center;
   margin: auto;
   width: 100%;
-  height: 100%;
+  height: 80%;
   text-align: left;
 }
 
@@ -142,24 +143,23 @@ a.ingreso-google {
 
 }
 
-a.sesion{
+
+
+nav .sesion{
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.8125rem;  
   text-align: center;
-  color: #0090AF;
+  color: black;
 }
 
-a.registro {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.125rem;
-  line-height: 1.8125rem;
-  text-align: center;
-  color: #000000;
+nav .current-page{
+
+  color: #0090AF;
+  font-weight: 500;
+  border-bottom: 3px solid #0090AF;
+
 }
 
 a.forgot-pw {
@@ -201,9 +201,6 @@ div.google img {
   grid-area: 1 / 2 / 2 / 5;
 }
 
-.sesion, .registro {
-  padding: 1.25rem;
-}
 
 .div-checkout {
   display: flex;

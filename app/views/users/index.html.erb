@@ -25,19 +25,21 @@
 <div class="container-students">
   <div class="table-students">
     <table>
-      <tr>
-        <%=tag.th  t('user.name')%>
-        <%=tag.th  t('user.surname')%>
-        <%=tag.th  t('user.email')%>
-        <% if policy(current_user).edit?%>
-        <%=tag.th t('user.rol')%>
-        <%=tag.th t('user.activate')%>
-        <th></th>
-        <% end %>
-      </tr>
+      <thead>
+        <tr>
+          <%=tag.th  t('user.name')%>
+          <%=tag.th  t('user.surname')%>
+          <%=tag.th  t('user.email')%>
+          <% if policy(current_user).edit?%>
+          <%=tag.th t('user.rol')%>
+          <%=tag.th t('user.activate')%>
+          <th></th>
+          <% end %>
+        </tr>
+      </thead>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.name %></td>
+          <td class= "user-name"><%= user.name %></td>
           <td><%= user.lastname %></td>
           <td><%= user.email %></td>
           <% if policy(current_user).edit? %>

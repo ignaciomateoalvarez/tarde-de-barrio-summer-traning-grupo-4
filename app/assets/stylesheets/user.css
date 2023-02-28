@@ -1,16 +1,16 @@
 .user-body {
-  background:#FAFAFA;
+  background: #fafafa;
 }
 
 .user-titulo {
   text-align: center;
-  background: #0090AF;
-  font-family: 'Roboto';
+  background: #0090af;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.1875rem;
-  color: #FFFFFF;
+  color: #ffffff;
   border-bottom: 1.875rem solid white;
   padding: 0.625rem;
 }
@@ -22,8 +22,8 @@
   line-height: 1.1875rem;
 }
 
-.user-tr { 
-  border: 0.0625rem solid #DADADA;
+.user-tr {
+  border: 0.0625rem solid #dadada;
 }
 
 table th,
@@ -32,14 +32,17 @@ table td {
   text-align: center;
 }
 
-th, td {
+th,
+td {
   padding: 1.875rem;
-  border: 0.0625rem solid #DADADA;
-
+  border: 0.0625rem solid #dadada;
 }
 
-.user-th-name, .user-th-lastname, .user-th-email, .user-th-edit {
-  font-family: 'Roboto';
+.user-th-name,
+.user-th-lastname,
+.user-th-email,
+.user-th-edit {
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -49,8 +52,9 @@ th, td {
   text-align: center;
 }
 
-.user-td-name, .user-td-lastname {
-  font-family: 'Roboto';
+.user-td-name,
+.user-td-lastname {
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
@@ -60,7 +64,7 @@ th, td {
 }
 
 .user-td-email {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -87,13 +91,14 @@ th, td {
   justify-content: flex-end;
   flex-direction: row;
   padding: 0.625rem;
-
 }
 
-.user-create-button, .user-edit-button, .logout-btn{
+.user-create-button,
+.user-edit-button,
+.logout-btn {
   padding: 0.5rem;
   gap: 0.625rem;
-  background: #0090AF;
+  background: #0090af;
   border-radius: 0.25rem;
   color: white;
   font-size: 0.875rem;
@@ -104,19 +109,20 @@ th, td {
 
 .logout-btn {
   position: absolute;
-  color: #343A40;
-  cursor:pointer;
+  color: #343a40;
+  cursor: pointer;
   background: white;
   box-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 76, 92, 0.2);
   border-radius: 0.25rem;
 }
 
-.logout-btn:hover{
-  background-color: #0090AF;
-  color:white;
+.logout-btn:hover {
+  background-color: #0090af;
+  color: white;
 }
 
-.user-create-button:hover , .user-edit-button:hover{
+.user-create-button:hover,
+.user-edit-button:hover {
   background: #007089;
 }
 
@@ -148,8 +154,8 @@ a {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -160,23 +166,22 @@ a {
   left: 0.0625rem;
   bottom: 0.0625rem;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #0090AF;
+  background-color: #0090af;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 0.0625rem #0090AF;
+  box-shadow: 0 0 0.0625rem #0090af;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(1.5625rem);
-  -ms-transform: translateX(1.5625rem);
-  transform: translateX(1.5625rem);
+  -webkit-transform: translateX(1.6625rem);
+  -ms-transform: translateX(1.6625rem);
+  transform: translateX(1.6625rem);
 }
 
 /* Rounded sliders */
