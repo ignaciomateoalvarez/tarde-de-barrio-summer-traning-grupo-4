@@ -52,7 +52,11 @@
         <p class="comment-day"><%= (key == Date.today) ? t('date.today') : value.first.decorate.format_date %></p>
         <% value.reverse.each do |v| %>
           <div class="comment-box">
-            <p class="comment-name"><%= v.user.full_name %><span><%= v.decorate.format_time %></span></p>
+            <div class="comment-wrapper">
+              <p class="comment-name"><%= v.user.full_name %></p>
+              <span><%= v.decorate.format_time %></span>
+            
+            </div>
               <%= image_tag "thumbs-up.svg"%>
             <p class="comment-body"><%= v.body %></p>
           </div>

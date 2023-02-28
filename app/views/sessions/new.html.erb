@@ -3,7 +3,7 @@
     <div class = "div-rectangle">
       <div class = div-nav>
         <nav>
-          <%= link_to t('session.session_'), root_path, class: 'sesion' %>
+          <%= link_to t('session.session_'), root_path, class: "sesion #{current_page?(new_session_path) ? 'current-page' : ''}"%>
           <%= link_to t('session.sign_up'), registrations_path, class: 'registro' %>
         </nav>
       </div>

@@ -5,10 +5,11 @@
 .input-modal{
   width: 80%;
   height: 2rem;
-  margin: auto;
+  margin: 2.5rem auto;
   display:block;
   margin-top:1.7rem;
   text-align: -webkit-left;
+  padding: 1rem;
 }
 
 .input-modal input {

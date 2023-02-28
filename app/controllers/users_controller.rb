@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy toggle_active]
+  before_action :set_user, only: %i[edit update destroy toggle_active]
   before_action :ensure_frame_response, only: %i[new edit]
   before_action :require_login
 
@@ -9,11 +9,6 @@ class UsersController < ApplicationController
   def index
     @filter = UserFilter.new(User.all.order(created_at: :desc), filter_params)
     @pagy, @users = pagy(@filter.call)
-  end
-
-  # GET /users/1 or /users/1.json
-  def show
-    @user = User.find(params[:id])
   end
 
   # GET /users/new

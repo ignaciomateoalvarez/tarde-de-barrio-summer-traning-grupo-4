@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :registrations
   resources :sessions
-  resources :users do
+  resources :users, except: [:show] do
     member do
       put 'toggle_active', to: 'users#toggle_active'
     end
