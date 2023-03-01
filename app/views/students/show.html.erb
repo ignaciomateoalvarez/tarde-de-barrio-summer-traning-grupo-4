@@ -24,11 +24,10 @@
       <p class='data-info'><%=  @student.decorate.escolarizado%></p> 
     </div>
   </div>
-  <hr/>
   <div class='container-comment'>
     <div class='comment-details'>
       <p><%= t('comments.title') %></p>
-      <%= form_with url: student_comment_path(@student), method: :post do %>
+      <%= form_with url: student_comments_path(@student), method: :post do %>
         <textarea name="body" rows="6" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
         <div class='comment-button'>
           <div class='icons-button'> 
@@ -55,13 +54,35 @@
             <div class="comment-wrapper">
               <p class="comment-name"><%= v.user.full_name %></p>
               <span><%= v.decorate.format_time %></span>
-            
             </div>
-              <%= image_tag "thumbs-up.svg"%>
             <p class="comment-body"><%= v.body %></p>
+            <details open class= "comment-details-style">
+              <summary></summary>
+                  <% v.sub_comments.each do |sub_comment| %>
+                    <div class="comment-wrapper sub-comment-spacing">
+                      <div class="user-wrapper">
+                        <p class="comment-name"><%= sub_comment.user.full_name %></p>
+                        <span><%= sub_comment.decorate.format_time %></span>
+                      </div>
+                      <p class="comment-body"><%= sub_comment.body %></p>
+                    </div>
+                  <% end %>
+              <div class='comment-details'>
+                <%= form_with url: student_comment_sub_comments_path(@student, comment_id: v), method: :post do %>
+                  <div class='form-sub_comment'>
+                    <textarea name="body" rows="2" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
+                      <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
+                        <%= image_tag 'send.svg' %> 
+                      <% end %>
+                  </div>  
+                <% end %>
+              </div>
+            </details>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
+
+

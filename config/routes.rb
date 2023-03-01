@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     end
   end
   resources :students do
-    post 'comment', to: 'comments#create'
+    resources :comments, only: [:create] do
+      resources :sub_comments, only: [:create]
+    end
   end
 
   resources :homes, only: [:index]
