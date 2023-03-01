@@ -1,16 +1,60 @@
 .comment-box {
-  border: 0.0625rem solid #DADADA;
+  border: 0.0625rem solid #dadada;
   border-radius: 0.5rem;
   padding: 1.5rem;
   position: relative;
   margin: 0.625rem;
-  border-left: 5px solid #D95234;
+  border-left: 9.6px solid #d95234;
 }
 
-.comment-box img{
+.comment-details-style summary {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.625rem;
+  right: 0;
+  top: 0;
+}
+
+.comment-details-style > summary {
+  list-style: none;
+}
+.comment-details-style summary::-webkit-details-marker {
+  display: none;
+}
+
+.comment-details-style summary::after {
+  content: "";
+  background-image: url("assets/chevron-up.svg");
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.625rem;
+}
+
+details[open] summary::after {
+  background-image: url("assets/chevron-down.svg");
+}
+
+.form-sub_comment {
+  position: relative;
+}
+
+.form-btn-sub-comment {
+  position: absolute;
+  cursor: pointer;
+}
+
+.comment-box img {
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 1.2rem;
+}
+.comment-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
 }
 .comment-wrapper{
 
@@ -18,20 +62,22 @@
   gap: 10px;
 }
 
-.comment-name{
+.comment-name {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1rem;
-  color: #0090AF;
+  color: #0090af;
 }
 
-.comment-name span{
+.comment-name span {
   color: black;
   text-transform: capitalize;
 }
 
 .comment-body {
-  margin-top: 0.5rem;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  word-wrap: break-word;
 }
 
 .comment-day {
@@ -39,7 +85,7 @@
   margin-bottom: 0.5rem;
   margin-top: 1rem;
   font-weight: 500;
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 0.8125rem;
+  line-height: 0.9375rem;
   color: #000000;
 }

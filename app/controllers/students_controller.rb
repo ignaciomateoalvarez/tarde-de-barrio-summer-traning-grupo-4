@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   before_action :require_login
 
   def index
-    @presenter = StudentsPresenter.new(params:params)
+    @presenter = StudentsPresenter.new(params)
     authorize Student
   end
 
@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @comments_by_day = @student.comments.group_by{ |c| c.created_at.to_date }.sort
+    @comments_by_day = @student.comments.group_by { |c| c.created_at.to_date }.sort
   end
 
   def destroy
@@ -61,6 +61,7 @@ class StudentsController < ApplicationController
 
   def ensure_frame_response
     return unless Rails.env.development?
+
     redirect_to users_list_path unless turbo_frame_request?
   end
 
