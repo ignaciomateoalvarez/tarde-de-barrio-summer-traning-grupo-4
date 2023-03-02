@@ -1,0 +1,34 @@
+<% comments_by_day.each do |time, comments| %>
+  <p class="comment-day"><%= (time == Date.today) ? t('date.today') : comments.first.decorate.format_date %></p>
+  <% comments.each do |comment| %>
+    <div class="comment-box <%= comment.highlight_comment ? 'border-highlight' : ''%>">
+      <div class="comment-wrapper">
+        <p class="comment-name"><%= comment.user.full_name %></p>
+        <span><%= comment.decorate.format_time %></span>
+      </div>
+      <p class="comment-body"><%= comment.body %></p>
+      <details open class= "comment-details-style">
+        <summary></summary>
+            <% comment.sub_comments.each do |sub_comment| %>
+              <div class="comment-wrapper sub-comment-spacing">
+                <div class="user-wrapper">
+                  <p class="comment-name"><%= sub_comment.user.full_name %></p>
+                  <span><%= sub_comment.decorate.format_time %></span>
+                </div>
+                <p class="comment-body"><%= sub_comment.body %></p>
+              </div>
+            <% end %>
+        <div class='comment-details'>
+          <%= form_with url: student_comment_sub_comments_path(student, comment_id: comment), method: :post do %>
+            <div class='form-sub_comment'>
+              <textarea name="body" rows="2" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
+                <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
+                  <%= image_tag 'send.svg' %> 
+                <% end %>
+            </div>  
+          <% end %>
+        </div>
+      </details>
+    </div>
+  <% end %>
+<% end %>

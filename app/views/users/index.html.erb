@@ -39,7 +39,7 @@
       </thead>
       <% @users.each do |user| %>
         <tr>
-          <td class= "user-name"><%= user.name %></td>
+          <td><%= user.name %></td>
           <td><%= user.lastname %></td>
           <td><%= user.email %></td>
           <% if policy(current_user).edit? %>

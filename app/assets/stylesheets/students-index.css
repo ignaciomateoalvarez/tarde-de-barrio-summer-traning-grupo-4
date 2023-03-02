@@ -34,7 +34,7 @@ th {
   border-radius: 10px;
 }
 
-.table-students table tbody tr td:first-child:hover {
+.table-students table tbody tr .student-user-name:hover {
   color: #0090af;
 }
 .table-students table tbody tr:hover {
@@ -44,7 +44,6 @@ th {
 .table-students table tr td:first-child {
   font-weight: 600;
 }
-
 
 .search-student {
   display: flex;

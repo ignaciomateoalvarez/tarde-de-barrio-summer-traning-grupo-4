@@ -24,7 +24,13 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @comments_by_day = @student.comments.group_by { |c| c.created_at.to_date }.sort
+    @comments = @student.comments.order(created_at: :desc)
+    @comments_highlighted = @comments.where(highlight_comment: true).group_by do |c|
+      c.created_at.to_date
+    end
+    @comments_not_highlighted = @comments.where(highlight_comment: false).group_by do |c|
+      c.created_at.to_date
+    end
   end
 
   def destroy
