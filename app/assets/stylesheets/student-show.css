@@ -12,7 +12,7 @@
 .student-data {
   padding: 2rem 1rem 0rem 1rem;
   width: 20%;
-  border-right: 1px solid #CCCCCC;
+  border-right: 1px solid #cccccc;
 }
 
 .student-data h2 {
@@ -85,6 +85,10 @@
   outline: none;
   border: none;
   padding: 1rem 3rem 1rem 1rem;
+}
+
+.comment-details textarea:focus {
+  border: 1px solid #0090af;
 }
 
 .comment-details p {

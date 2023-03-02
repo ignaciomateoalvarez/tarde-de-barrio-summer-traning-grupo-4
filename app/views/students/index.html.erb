@@ -31,7 +31,7 @@
       <tbody>
         <% @presenter.students.each do |student| %>
           <tr>
-            <td><%= link_to student.full_name, student_path(student) %></td>
+            <td class= "student-user-name"><%= link_to student.full_name, student_path(student) %></td>
             <td><%= student.ages %></td>
             <td><%= student.school_grade %></td>
             <td><%= student.escolarizado %></td>

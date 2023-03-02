@@ -4,10 +4,14 @@
   padding: 1.5rem;
   position: relative;
   margin: 0.625rem;
+}
+
+.border-highlight {
   border-left: 9.6px solid #d95234;
 }
 
 .comment-details-style summary {
+  list-style: none;
   cursor: pointer;
   position: absolute;
   padding: 0.625rem;
@@ -15,9 +19,6 @@
   top: 0;
 }
 
-.comment-details-style > summary {
-  list-style: none;
-}
 .comment-details-style summary::-webkit-details-marker {
   display: none;
 }
@@ -37,6 +38,21 @@ details[open] summary::after {
   background-image: url("assets/chevron-down.svg");
 }
 
+details[open] summary ~ * {
+  animation: sweep 0.3s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -30px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
 .form-sub_comment {
   position: relative;
 }
@@ -44,20 +60,17 @@ details[open] summary::after {
 .form-btn-sub-comment {
   position: absolute;
   cursor: pointer;
-}
-
-.comment-box img {
-  position: absolute;
   right: 1rem;
   top: 1.2rem;
+  border: none;
 }
+
 .comment-wrapper {
   display: flex;
   align-items: center;
   gap: 0.625rem;
 }
-.comment-wrapper{
-
+.comment-wrapper {
   display: flex;
   gap: 10px;
 }

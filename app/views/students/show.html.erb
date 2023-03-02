@@ -27,7 +27,7 @@
   <div class='container-comment'>
     <div class='comment-details'>
       <p><%= t('comments.title') %></p>
-      <%= form_with url: student_comments_path(@student), method: :post do %>
+      <%= form_with url: student_comments_path(@student), method: :post do |f| %>
         <textarea name="body" rows="6" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
         <div class='comment-button'>
           <div class='icons-button'> 
@@ -37,7 +37,7 @@
             <%= button_tag do %>
               <i class='icon image'></i>
             <% end %>
-            <input type='checkbox' value='1'> 
+            <%= f.check_box :highlight_comment %>
             <label><%= t('student.highlight_post')%></label>
           </div>
           <div> 
@@ -47,40 +47,8 @@
       <% end %>
     </div>
     <div class="comments">
-      <% @comments_by_day.reverse.each do |key, value| %>
-        <p class="comment-day"><%= (key == Date.today) ? t('date.today') : value.first.decorate.format_date %></p>
-        <% value.reverse.each do |v| %>
-          <div class="comment-box">
-            <div class="comment-wrapper">
-              <p class="comment-name"><%= v.user.full_name %></p>
-              <span><%= v.decorate.format_time %></span>
-            </div>
-            <p class="comment-body"><%= v.body %></p>
-            <details open class= "comment-details-style">
-              <summary></summary>
-                  <% v.sub_comments.each do |sub_comment| %>
-                    <div class="comment-wrapper sub-comment-spacing">
-                      <div class="user-wrapper">
-                        <p class="comment-name"><%= sub_comment.user.full_name %></p>
-                        <span><%= sub_comment.decorate.format_time %></span>
-                      </div>
-                      <p class="comment-body"><%= sub_comment.body %></p>
-                    </div>
-                  <% end %>
-              <div class='comment-details'>
-                <%= form_with url: student_comment_sub_comments_path(@student, comment_id: v), method: :post do %>
-                  <div class='form-sub_comment'>
-                    <textarea name="body" rows="2" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
-                      <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
-                        <%= image_tag 'send.svg' %> 
-                      <% end %>
-                  </div>  
-                <% end %>
-              </div>
-            </details>
-          </div>
-        <% end %>
-      <% end %>
+      <%= render partial: 'comments', locals: { comments_by_day: @comments_highlighted, student: @student }%>
+      <%= render partial: 'comments', locals: { comments_by_day: @comments_not_highlighted, student: @student }%>
     </div>
   </div>
 </div>
