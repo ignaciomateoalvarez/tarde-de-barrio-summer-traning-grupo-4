@@ -1,7 +1,8 @@
+<% highlight_styles = 'border-highlight' if is_highlighted %>
 <% comments_by_day.each do |time, comments| %>
   <p class="comment-day"><%= (time == Date.today) ? t('date.today') : comments.first.decorate.format_date %></p>
   <% comments.each do |comment| %>
-    <div class="comment-box <%= comment.highlight_comment ? 'border-highlight' : ''%>">
+    <div class="comment-box <%= highlight_styles %>">
       <div class="comment-wrapper">
         <p class="comment-name"><%= comment.user.full_name %></p>
         <span><%= comment.decorate.format_time %></span>

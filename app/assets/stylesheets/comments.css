@@ -102,3 +102,15 @@ details[open] summary ~ * {
   line-height: 0.9375rem;
   color: #000000;
 }
+
+.emojis-image:hover {
+  cursor: pointer;
+  filter: invert(37%) sepia(69%) saturate(1410%) hue-rotate(159deg)
+    brightness(93%) contrast(103%);
+}
+
+.my-picker-comment{
+  z-index: 1;
+  position: relative;
+}
+

@@ -28,3 +28,5 @@ config/initializers/app_config.rb
 
 #Ignore db credentials
 /config/database.yml
+
+/node_modules/

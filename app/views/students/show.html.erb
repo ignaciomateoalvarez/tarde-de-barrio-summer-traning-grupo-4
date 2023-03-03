@@ -27,13 +27,11 @@
   <div class='container-comment'>
     <div class='comment-details'>
       <p><%= t('comments.title') %></p>
-      <%= form_with url: student_comments_path(@student), method: :post do |f| %>
-        <textarea name="body" rows="6" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
+      <%= form_with url: student_comments_path(@student), method: :post, data: { controller: "emoji-picker"} do |f| %>
+      <%= f.text_area :body, placeholder: t('comments.placeholder'),class: 'my-picker-comment', data: { emoji_picker_target: "input"} %>
         <div class='comment-button'>
           <div class='icons-button'> 
-            <%= button_tag do %>
-              <i class='icon smile'></i>
-            <% end %>
+            <%= image_tag 'smile.svg', class: 'emojis-image', data: { action: "click->emoji-picker#toggle" , emoji_picker_target: "button"}%>
             <%= button_tag do %>
               <i class='icon image'></i>
             <% end %>
@@ -47,8 +45,8 @@
       <% end %>
     </div>
     <div class="comments">
-      <%= render partial: 'comments', locals: { comments_by_day: @comments_highlighted, student: @student }%>
-      <%= render partial: 'comments', locals: { comments_by_day: @comments_not_highlighted, student: @student }%>
+      <%= render partial: 'comments', locals: { comments_by_day: @comments_highlighted, student: @student, is_highlighted: true }%>
+      <%= render partial: 'comments', locals: { comments_by_day: @comments_not_highlighted, student: @student, is_highlighted: false }%>
     </div>
   </div>
 </div>
