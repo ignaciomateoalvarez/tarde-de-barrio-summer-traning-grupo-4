@@ -14,9 +14,10 @@
   list-style: none;
   cursor: pointer;
   position: absolute;
-  padding: 0.625rem;
+  padding: 1.6rem 0.625rem 0;
   right: 0;
   top: 0;
+
 }
 
 .comment-details-style summary::-webkit-details-marker {
@@ -69,13 +70,11 @@ details[open] summary ~ * {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-}
-.comment-wrapper {
-  display: flex;
-  gap: 10px;
+  justify-content: space-between;
 }
 
-.comment-name {
+
+.comment-name p {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1rem;
@@ -103,7 +102,22 @@ details[open] summary ~ * {
   color: #000000;
 }
 
-.emojis-image:hover {
+.comment-name, .like-box {
+  display: flex;
+  gap: 10px;
+}
+
+.like-box{
+  align-items: center;
+  margin-right: 1.875rem;
+}
+
+.btn-like {
+  border: none;
+  background: none;
+}
+
+.emojis-image:hover, .btn-like:hover, .btn-unlike {
   cursor: pointer;
   filter: invert(37%) sepia(69%) saturate(1410%) hue-rotate(159deg)
     brightness(93%) contrast(103%);

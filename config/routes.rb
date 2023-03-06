@@ -14,8 +14,10 @@ Rails.application.routes.draw do
     end
   end
   resources :students do
+    resources :likes, only: [:destroy]
     resources :comments, only: [:create] do
       resources :sub_comments, only: [:create]
+      resources :likes, only: [:create]
     end
   end
 
