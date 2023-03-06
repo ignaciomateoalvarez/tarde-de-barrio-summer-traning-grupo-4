@@ -4,8 +4,23 @@
   <% comments.each do |comment| %>
     <div class="comment-box <%= highlight_styles %>">
       <div class="comment-wrapper">
-        <p class="comment-name"><%= comment.user.full_name %></p>
-        <span><%= comment.decorate.format_time %></span>
+        <div class= "comment-name">
+          <p><%= comment.user.full_name %></p>
+          <span><%= comment.decorate.format_time %></span>
+        </div>
+        <div class= "like-box">
+          <p><%= comment.likes.count %></p>
+          <% pre_like = comment.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= button_to student_like_path(pre_like.id, student_id: student.id ),class:"btn-like btn-unlike", method: :delete do%>
+              <%= image_tag "thumbs-up.svg", class:"like-image" %>        
+            <%end%>
+          <% else %>
+            <%= button_to student_comment_likes_path(student, comment_id: comment), class:"btn-like", method: :post do%>
+              <%= image_tag "thumbs-up.svg", class:"like-image" %>  
+            <%end%>
+          <%end%>
+        </div>
       </div>
       <p class="comment-body"><%= comment.body %></p>
       <details open class= "comment-details-style">

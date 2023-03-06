@@ -223,7 +223,7 @@ div.google img {
   cursor: pointer;
 }
 
-.delete-btn:hover {
+.delete-btn:hover, .btn-unlike:hover {
   filter: invert(10%) sepia(85%) saturate(6989%) hue-rotate(7deg)
     brightness(78%) contrast(112%);
 }
