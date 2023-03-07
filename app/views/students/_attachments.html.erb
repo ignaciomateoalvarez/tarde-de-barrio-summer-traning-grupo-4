@@ -1,0 +1,5 @@
+<% comment.files.each do |file| %>
+  <div class='files-links'>
+    <%= link_to file.filename , rails_blob_path(file, disposition: 'attachment') %>
+  </div>
+<% end %>

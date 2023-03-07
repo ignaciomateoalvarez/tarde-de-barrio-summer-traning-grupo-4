@@ -196,3 +196,13 @@ input:checked + .slider:before {
 .logout-btn {
   align-self: flex-end;
 }
+
+.users-actual-page {
+  border-bottom: 3px solid white;
+  padding: 7px 0;
+}
+
+.students-actual-page {
+  border-bottom: 3px solid white;
+  padding-bottom: 11px;
+}

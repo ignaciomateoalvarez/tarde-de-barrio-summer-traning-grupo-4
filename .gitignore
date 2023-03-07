@@ -30,3 +30,5 @@ config/initializers/app_config.rb
 /config/database.yml
 
 /node_modules/
+
+/storage

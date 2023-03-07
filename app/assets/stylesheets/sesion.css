@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 10%;
+  padding-top: 7%;
 }
 
 .div-rectangle {
   width: 55.4375rem;
   height: 36.5rem;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: -0.4375rem 0.4375rem 1.875rem rgba(0, 76, 92, 0.2);
   border-radius: 0.5rem;
 }
@@ -32,15 +32,11 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  /*
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(1fr, 4);
-  grid-column-gap: 0rem;
-  grid-row-gap: 0rem;
-  justify-content: center;
-  align-items: center;
-  */
+}
+
+.div-form .d2 .input-label:focus-visible {
+  outline: none;
+  border: 1px solid #0090af;
 }
 
 div.d1 {
@@ -49,7 +45,6 @@ div.d1 {
   align-items: flex-start;
   height: 100%;
   flex-grow: 10;
-
 }
 
 div.d2 {
@@ -63,7 +58,7 @@ div.d2 {
 .div-nav {
   display: flex;
   justify-content: space-evenly;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 1.125rem;
@@ -71,6 +66,10 @@ div.d2 {
   text-align: center;
   color: #000000;
   padding: 0.625rem;
+}
+
+.div-nav a:hover {
+  color: #0090af;
 }
 
 .div-img {
@@ -82,15 +81,13 @@ div.d2 {
 }
 
 h2.ingresar {
-
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 1.511rem;
   line-height: 1.8125rem;
   text-align: center;
-  color: #000000; 
-
+  color: #000000;
 }
 
 .btn-ingresar {
@@ -98,20 +95,24 @@ h2.ingresar {
   height: 2.5rem;
   left: 51.4931rem;
   top: 37.6875rem;
-  background: #0090AF;
+  background: #0090af;
   border-radius: 0.2159rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.125rem;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
+.btn-ingresar:hover {
+  border: 2px solid white;
+  cursor: pointer;
+}
 
 label {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 0.8125rem;
@@ -126,62 +127,60 @@ label {
   right: 22.22%;
   top: 42.68%;
   bottom: 54.1%;
-  background: #FAFAFA;
-  border: 0.0809rem solid #CCCCCC;
+  background: #fafafa;
+  border: 0.0809rem solid #cccccc;
   border-radius: 0.4419rem;
   padding: 0.3125rem;
 }
 
-
 a.ingreso-google {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   color: #000000;
   text-decoration: none;
-
 }
 
-
-
-nav .sesion{
-  font-family: 'Roboto';
+nav .sesion {
+  font-family: "Roboto";
   font-style: normal;
   font-size: 1.125rem;
-  line-height: 1.8125rem;  
+  line-height: 1.8125rem;
   text-align: center;
   color: black;
 }
 
-nav .current-page{
-
-  color: #0090AF;
+nav .current-page {
+  color: #0090af;
   font-weight: 500;
-  border-bottom: 3px solid #0090AF;
-
+  border-bottom: 3px solid #0090af;
 }
 
 a.forgot-pw {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.8125rem;
-  color: #0090AF;  
+  color: #0090af;
   padding: 0.625rem;
 }
 
+a.forgot-pw:hover,
+a.ingreso-google:hover {
+  opacity: 0.6;
+}
 
-.google { 
-  border: #0090AF 0.0625rem;
+.google {
+  border: #0090af 0.0625rem;
   border-style: solid;
   width: 14.5694rem;
   height: 2.5rem;
   left: 51.4931rem;
   top: 37.6875rem;
   border-radius: 0.2159rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -201,10 +200,12 @@ div.google img {
   grid-area: 1 / 2 / 2 / 5;
 }
 
-
 .div-checkout {
   display: flex;
   flex-direction: row;
+  align-self: flex-start;
+  margin-left: 9%;
+  padding: 10px;
 }
 
 .div-links {
@@ -216,14 +217,15 @@ div.google img {
 }
 
 .logged-user {
-  position:absolute;
-  right:0;
+  position: absolute;
+  right: 0;
   padding-right: 1rem;
   color: white;
   cursor: pointer;
 }
 
-.delete-btn:hover, .btn-unlike:hover {
+.delete-btn:hover,
+.btn-unlike:hover {
   filter: invert(10%) sepia(85%) saturate(6989%) hue-rotate(7deg)
     brightness(78%) contrast(112%);
 }

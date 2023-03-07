@@ -17,7 +17,6 @@
   padding: 1.6rem 0.625rem 0;
   right: 0;
   top: 0;
-
 }
 
 .comment-details-style summary::-webkit-details-marker {
@@ -73,7 +72,6 @@ details[open] summary ~ * {
   justify-content: space-between;
 }
 
-
 .comment-name p {
   font-weight: 700;
   font-size: 0.875rem;
@@ -102,12 +100,13 @@ details[open] summary ~ * {
   color: #000000;
 }
 
-.comment-name, .like-box {
+.comment-name,
+.like-box {
   display: flex;
   gap: 10px;
 }
 
-.like-box{
+.like-box {
   align-items: center;
   margin-right: 1.875rem;
 }
@@ -117,14 +116,37 @@ details[open] summary ~ * {
   background: none;
 }
 
-.emojis-image:hover, .btn-like:hover, .btn-unlike {
+.emojis-image{
+  align-self: flex-start;
+}
+
+.files-attacher div li{
+  list-style: none;
+  margin: 5px 0;
+}
+
+.emojis-image:hover,
+.btn-like:hover,
+.btn-unlike,
+.files-attacher img:hover,
+.files-attacher div li:hover {
   cursor: pointer;
   filter: invert(37%) sepia(69%) saturate(1410%) hue-rotate(159deg)
     brightness(93%) contrast(103%);
 }
 
-.my-picker-comment{
-  z-index: 1;
-  position: relative;
+.my-picker-comment {
+  height: 8rem;
 }
 
+.files-links {
+  margin: 10px 0;
+}
+
+.files-attacher {
+  padding: 0 10px;
+}
+
+.files-attacher input {
+  display: none;
+}
