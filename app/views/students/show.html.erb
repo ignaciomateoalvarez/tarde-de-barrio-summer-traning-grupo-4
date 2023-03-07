@@ -27,14 +27,18 @@
   <div class='container-comment'>
     <div class='comment-details'>
       <p><%= t('comments.title') %></p>
-      <%= form_with url: student_comments_path(@student), method: :post, data: { controller: "emoji-picker"} do |f| %>
+      <%= form_with url: student_comments_path(@student), scope: :comment, method: :post, data: { controller: "emoji-picker"} do |f| %>
       <%= f.text_area :body, placeholder: t('comments.placeholder'),class: 'my-picker-comment', data: { emoji_picker_target: "input"} %>
         <div class='comment-button'>
           <div class='icons-button'> 
             <%= image_tag 'smile.svg', class: 'emojis-image', data: { action: "click->emoji-picker#toggle" , emoji_picker_target: "button"}%>
-            <%= button_tag do %>
-              <i class='icon image'></i>
-            <% end %>
+            <label class='files-attacher'>
+              <%= image_tag 'add-files.svg' %>
+              <div data-controller="file">
+                <%= f.file_field :files, multiple: true, data: {action: 'change->file#addFile'}, active: 'image/jpg, image/png, application/pdf, application/msword' %>
+                <ul class='files-list' data-file-target='list'> </ul>
+              </div>
+            </label>
             <%= f.check_box :highlight_comment %>
             <label><%= t('student.highlight_post')%></label>
           </div>

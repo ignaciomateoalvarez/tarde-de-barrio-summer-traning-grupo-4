@@ -10,17 +10,17 @@ class Student < ApplicationRecord
   enum school_grade: { Inicial: 0, Primaria: 1, Secundaria: 2 }
 
   def age
-    age = (Date.today - self.birthdate)/365.25
+    age = (Date.today - birthdate) / 365.25
     age.to_int
   end
 
   private
 
   def cant_be_future
-    unless (birthdate.present? && !birthdate.future?)
-      errors.add(:birthdate, I18n.t('models.student.error_date'))
-    else
+    if birthdate.present? && !birthdate.future?
       true
+    else
+      errors.add(:birthdate, I18n.t('models.student.error_date'))
     end
   end
 end

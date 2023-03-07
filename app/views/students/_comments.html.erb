@@ -23,6 +23,7 @@
         </div>
       </div>
       <p class="comment-body"><%= comment.body %></p>
+      <%= render 'attachments', comment: comment if comment.files.attached? %>
       <details open class= "comment-details-style">
         <summary></summary>
             <% comment.sub_comments.each do |sub_comment| %>
@@ -38,9 +39,9 @@
           <%= form_with url: student_comment_sub_comments_path(student, comment_id: comment), method: :post do %>
             <div class='form-sub_comment'>
               <textarea name="body" rows="2" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
-                <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
-                  <%= image_tag 'send.svg' %> 
-                <% end %>
+              <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
+                <%= image_tag 'send.svg' %> 
+              <% end %>
             </div>  
           <% end %>
         </div>

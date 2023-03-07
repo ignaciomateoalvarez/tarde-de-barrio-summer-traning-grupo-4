@@ -1,30 +1,14 @@
 .background {
-  background: #0090AF;
+  background: #0090af;
   height: 100vh;
 }
-
-
 
 .div-rectangle {
   width: 55.4375rem;
   height: 36.5rem;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: -0.4375rem 0.4375rem 1.875rem rgba(0, 76, 92, 0.2);
   border-radius: 0.5rem;
-}
-
-
-.div-nav {
-  display: flex;
-  justify-content: space-evenly;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.125rem;
-  line-height: 1.8125rem;
-  text-align: center;
-  color: #000000;
-  padding: 0.625rem;
 }
 
 .div-img {
@@ -36,15 +20,13 @@
 }
 
 h2.ingresar {
-
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 1.511rem;
   line-height: 1.8125rem;
   text-align: center;
-  color: #000000; 
-
+  color: #000000;
 }
 
 .btn-ingresar {
@@ -52,31 +34,29 @@ h2.ingresar {
   height: 2.5rem;
   left: 51.4931rem;
   top: 37.6875rem;
-  background: #0090AF;
+  background: #0090af;
   border-radius: 0.2159rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.125rem;
   text-align: center;
-  color: #FFFFFF;
-
+  color: #ffffff;
+  border: none;
 }
 
-
 a.ingreso-google {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   color: #000000;
   text-decoration: none;
-
 }
 
 a.registro {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-size: 1.125rem;
   line-height: 1.8125rem;
@@ -84,27 +64,15 @@ a.registro {
   color: #000000;
 }
 
-a.forgot-pw {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.8125rem;
-  line-height: 1.8125rem;
-  color: #0090AF;  
-  padding: 0.625rem;
-}
-
-
-.google { 
-
-  border: #0090AF 0.0625rem;
+.google {
+  border: #0090af 0.0625rem;
   border-style: solid;
   width: 14.5694rem;
   height: 2.5rem;
   left: 51.4931rem;
   top: 37.6875rem;
   border-radius: 0.2159rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -113,7 +81,6 @@ a.forgot-pw {
   text-align: center;
   justify-content: center;
   align-items: center;
-
 }
 
 div.google img {
@@ -125,13 +92,7 @@ div.google img {
   grid-area: 1 / 2 / 2 / 5;
 }
 
-.sesion, .registro {
+.sesion,
+.registro {
   padding: 0.8rem;
 }
-
-.div-checkout {
-  display: flex;
-  flex-direction: row;
-}
-
-
