@@ -1,0 +1,97 @@
+.home-container {
+  display: flex;
+  height: 95vh;
+}
+
+.post-section {
+  width: 70%;
+  background-color: aquamarine;
+}
+
+.attendance-section {
+  width: 30%;
+
+}
+.attendance-container h2{
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+.attendance-container {
+  overflow-y: scroll;
+  border: 1px solid #CCCCCC;
+  height: 500px;
+  margin: 100px 10px 10px;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.attendance-container table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+.attendance-container table td,
+.attendance-container table th{
+  outline: none;
+  border: none;
+}
+.attendance-container table tbody tr:first-of-type{
+  border-top: 1px solid;
+}
+.attendance-container table tbody tr {
+  border-top: 1px solid #CCCCCC;
+
+}
+.attendance-container table td:nth-child(even){
+  color: green;
+}
+
+.attendance-detail-container {
+  height: 200px;
+}
+.hover-text{
+  position: relative;
+}
+
+.hover-text:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  padding: 7px;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  right: -70%;
+  bottom: 110%;
+}
+
+.hover-text:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+.attendance-container::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+.attendance-container::-webkit-scrollbar-thumb {
+  background: #0090af;
+  border-radius: 3px;
+}
+
+.attendance-container::-webkit-scrollbar-thumb:hover {
+  background: #7f7f8d;
+}
+
+.attendance-container::-webkit-scrollbar-thumb:active {
+  background: #0090af;
+}
+
+
