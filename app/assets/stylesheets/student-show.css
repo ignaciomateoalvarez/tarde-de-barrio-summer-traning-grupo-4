@@ -68,7 +68,7 @@
 .container-comment {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   padding: 1.25rem 5.5rem;
 }
 

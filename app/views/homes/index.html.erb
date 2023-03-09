@@ -1,40 +1,91 @@
 <div class="home-container">
-
-
   <section class="post-section">
     <div class="date-container">
-      <p>Fecha </p>
+      <p> <%= t('home.index.date') %> </p>
     </div>
-    <div class="post-container"> 
-      <h1>Novedades</h1>
+    <div class='container-comment post-index'>
+      <div class='comment-details'>
+        <p><%= t('home.index.title') %></p>
+        <%= form_with url: posts_path, scope: :post, method: :post, data: { controller: "emoji-picker"} do |f| %>
+        <%= f.text_area :body, placeholder: t('comments.placeholder'),class: 'my-picker-comment', data: { emoji_picker_target: "input"} %>
+          <div class='comment-button'>
+            <div class='icons-button'> 
+              <%= image_tag 'smile.svg', class: 'emojis-image', data: { action: "click->emoji-picker#toggle" , emoji_picker_target: "button"}%>
+              <label class='files-attacher'>
+                <%= image_tag 'add-files.svg' %>
+                <div data-controller="file">
+                  <%= f.file_field :files, multiple: true, data: {action: 'change->file#addFile'}, active: 'image/jpg, image/png, application/pdf, application/msword' %>
+                  <ul class='files-list' data-file-target='list'> </ul>
+                </div>
+              </label>
+              <%= f.check_box :highlight_post %>
+              <label><%= t('student.highlight_post')%></label>
+            </div>
+            <div> 
+              <input type="submit", value= "Publicar", class= "post-button">
+            </div>
+          </div>  
+        <% end %>
+      </div>
+      <div class="comments">
+        <%= render partial: 'posts', locals: { posts_by_day: @posts_highlighted, is_highlighted: true } %>
+        <%= render partial: 'posts', locals: { posts_by_day: @posts_not_highlighted, is_highlighted: false } %>
+      </div>
     </div>
   </section>
-
   <section class="attendance-section">
     <div class="attendance-container">
       <h2> Asistencia </h2>
-      <table>
-        <thead>
-          <th>Alumnado</th>   
-          <th class="hover-text" data-hover="Alumnos presentes">P</th>   
-          <th class="hover-text" data-hover="Alumnos ausentes">A</th>   
-          <th class="hover-text" data-hover="Alumnos retirados">R</th>
-        </thead>
-        <tbody>
-
-          <% @students.each do |student| %>
-            <tr>
-              <td><%= student.decorate.full_name %></td>
-              <td>O</td>
-              <td>O</td>
-              <td>O</td>
-            </tr> 
-          <% end %>
-        </tbody>
-      </table>
+      <details open class= "comment-details-style">
+        <summary></summary>
+          <table>
+            <thead>
+              <th>Alumnado</th>   
+              <th class="hover-text" data-hover="Alumnos presentes">P</th>   
+              <th class="hover-text" data-hover="Alumnos ausentes">A</th>   
+              <th class="hover-text" data-hover="Alumnos retirados">R</th>
+            </thead>
+            <tbody>
+              <% @students.each do |student| %>
+                <tr>
+                  <td><%= student.decorate.full_name %></td>
+                  <td>O</td>
+                  <td>O</td>
+                  <td>O</td>
+                </tr> 
+              <% end %>
+            </tbody>
+          </table>
+      </details>
     </div>
     <div class="attendance-detail-container">
-      <h2> Asistencia checkbox </h2>
+      <details open class= "comment-details-style">
+        <summary></summary>
+          <table>
+            <tbody>
+                <tr>
+                  <td>Asistencia</td>
+                  <td>O</td>
+                  <td>O</td>
+                  <td>O</td>
+                </tr>
+                 <tr>
+                  <td>Destacado</td>
+                  <td>O</td>
+                </tr> 
+                 <tr>
+                  <td>Equipo</td>
+                  <td>
+                    <ul>
+                      <li>Pepito</li>
+                      <li>Maia</li>
+                      <li>Drako</li>
+                    </ul>
+                  </td>
+                </tr>  
+            </tbody>
+          </table>
+      </details>
     </div>
   </section>
 </div>

@@ -23,7 +23,7 @@
         </div>
       </div>
       <p class="comment-body"><%= comment.body %></p>
-      <%= render 'attachments', comment: comment if comment.files.attached? %>
+      <%= render 'attachments', comment: comment if comment.files.attached?%>
       <details open class= "comment-details-style">
         <summary></summary>
             <% comment.sub_comments.each do |sub_comment| %>

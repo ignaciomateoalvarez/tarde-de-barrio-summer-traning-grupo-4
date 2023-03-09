@@ -1,7 +1,7 @@
 .comment-box {
   border: 0.0625rem solid #dadada;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   position: relative;
   margin: 0.625rem;
 }
@@ -38,7 +38,7 @@ details[open] summary::after {
   background-image: url("assets/chevron-down.svg");
 }
 
-details[open] summary ~ * {
+.comment-box details[open] summary ~ * {
   animation: sweep 0.3s ease-in-out;
 }
 
@@ -68,11 +68,12 @@ details[open] summary ~ * {
 .comment-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.3rem;
   justify-content: space-between;
 }
 
-.comment-name p {
+.comment-name p,
+.comment-name {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1rem;
@@ -108,7 +109,7 @@ details[open] summary ~ * {
 
 .like-box {
   align-items: center;
-  margin-right: 1.875rem;
+  margin-right: 2.5rem;
 }
 
 .btn-like {
@@ -116,11 +117,11 @@ details[open] summary ~ * {
   background: none;
 }
 
-.emojis-image{
+.emojis-image {
   align-self: flex-start;
 }
 
-.files-attacher div li{
+.files-attacher div li {
   list-style: none;
   margin: 5px 0;
 }

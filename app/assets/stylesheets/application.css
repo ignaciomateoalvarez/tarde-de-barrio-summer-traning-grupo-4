@@ -39,6 +39,7 @@
   border-radius: 0.5rem;
   background-color: #fff;
 }
+
 .edit-h1 h1 {
   background: #0090af;
   font-family: "Roboto";
@@ -51,6 +52,7 @@
   padding: 1rem;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
+
 .modal-background {
   position: absolute;
   top: 0;
@@ -66,19 +68,26 @@
   width: 100%;
   height: 3rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
   font-weight: bold;
+  justify-content: space-between;
+  padding: 0 15px;
 }
 
-.home {
-  margin-left: auto;
-  margin-right: 1rem;
+.nav-navigation{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
 }
 
-.students {
-  margin-left: 1rem;
-  margin-right: auto;
+.nav-navigation *:hover{
+  opacity: 0.7; 
+}
+
+
+.nav-navigation a:visited{
+  color: inherit;
 }
 
 .students a,
@@ -105,8 +114,6 @@
 .logged-user strong {
   user-select: none;
 }
-
-/* app/assets/stylesheets/application.scss */
 
 .hidden {
   display: none;

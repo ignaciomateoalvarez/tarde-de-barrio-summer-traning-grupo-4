@@ -1,10 +1,10 @@
 <div class="navbar" data-controller="modal">
-  <div class="home">
-    <%= link_to image_tag('home.svg'), users_path, class: "#{'users-actual-page' if current_page?(users_path)}"%>
+  <div >
+    <%= link_to image_tag('menu.svg'), users_path, class: "#{'users-actual-page' if current_page?(users_path)}"%>
   </div>
-  <div class="students">
+  <div class="nav-navigation">
+    <%= link_to image_tag('home.svg'), users_path, class: "#{'users-actual-page' if current_page?(users_path)}"%>
     <%= link_to "Estudiantes", students_path, class: "#{'students-actual-page' if current_page?(students_path)}" %>
-    
   </div>
   <div class="logged-user">
     <span data-action="click->modal#hideModal">
