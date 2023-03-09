@@ -1,0 +1,51 @@
+<% highlight_styles = 'border-highlight' if is_highlighted %>
+<% posts_by_day.each do |time, posts| %>
+  <p class="comment-day"><%= (time == Date.today) ? t('date.today') : posts.first.decorate.format_date %></p>
+  <% posts.each do |post| %>
+    <div class="comment-box <%= highlight_styles %>">
+      <div class="comment-wrapper">
+        <div class= "comment-name">
+          <p><%= post.user.full_name %></p>
+          <span><%= post.decorate.format_time %></span>
+        </div>
+        <div class= "like-box">
+          <p><%= post.likes.count %></p>
+          <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= button_to post_like_path(pre_like.id, post_id: post.id ),class:"btn-like btn-unlike", method: :delete do%>
+              <%= image_tag "thumbs-up.svg", class:"like-image" %>
+            <%end%>
+          <% else %>
+            <%= button_to post_likes_path(posts, post_id: post), class:"btn-like", method: :post do%>
+              <%= image_tag "thumbs-up.svg", class:"like-image" %>
+            <%end%>
+          <%end%>
+        </div>
+      </div>
+      <p class="comment-body"><%= post.body %></p>
+      <%= render 'attachments', post: post if post.files.attached?%>
+      <details open class= "comment-details-style">
+        <summary></summary>
+            <% post.children.each do |post_reply| %>
+              <div class="comment-wrapper sub-comment-spacing">
+                <div class="user-wrapper">
+                  <p class="comment-name"><%= post_reply.user.full_name %></p>
+                  <span><%= post_reply.decorate.format_time %></span>
+                </div>
+                <p class="comment-body"><%= post_reply.body %></p>
+              </div>
+            <% end %>
+        <div class='comment-details'>
+          <%= form_with url: post_posts_path(post), scope: :post, method: :post do %>
+            <div class='form-sub_comment'>
+              <textarea name="body" rows="2" cols="50" placeholder='<%=t('comments.placeholder')%>' ></textarea>
+              <%= button_tag :submit, class: 'form-btn-sub-comment' do %>
+                <%= image_tag 'send.svg' %> 
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </details>
+    </div>
+  <% end %>
+<% end %>

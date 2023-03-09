@@ -199,10 +199,11 @@ input:checked + .slider:before {
 
 .users-actual-page {
   border-bottom: 3px solid white;
-  padding: 7px 0;
+  padding: 8px 0;
 }
 
 .students-actual-page {
   border-bottom: 3px solid white;
   padding-bottom: 11px;
+  margin-top: 15px;
 }

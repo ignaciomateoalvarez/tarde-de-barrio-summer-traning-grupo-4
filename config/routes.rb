@@ -22,5 +22,10 @@ Rails.application.routes.draw do
   end
 
   resources :homes, only: [:index]
+  resources :posts, only: [:create] do
+    resources :posts, only: [:create]
+    resources :likes, only: %i[create destroy]
+  end
+
   get 'logout' => 'sessions#destroy', :as => 'logout'
 end

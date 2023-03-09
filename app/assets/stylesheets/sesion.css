@@ -217,9 +217,6 @@ div.google img {
 }
 
 .logged-user {
-  position: absolute;
-  right: 0;
-  padding-right: 1rem;
   color: white;
   cursor: pointer;
 }

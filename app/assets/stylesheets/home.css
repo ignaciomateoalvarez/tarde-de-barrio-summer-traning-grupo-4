@@ -1,81 +1,81 @@
 .home-container {
   display: flex;
-  height: 95vh;
 }
 
 .post-section {
-  width: 70%;
-  background-color: aquamarine;
+  width: 65%;
+  margin: 20px;
+}
+.date-container {
+  text-align: left;
+  margin: 40px 15px 15px; 
+}
+
+.post-container {
+  height: 80%;
+  text-align: center;
+  margin: 15px;
+  margin-top: 40px;
+}
+.attendance-section div, .post-index {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .attendance-section {
   width: 30%;
-
+  margin-right: 20px;
+  position: fixed;
+  right: 0;
 }
-.attendance-container h2{
+
+.attendance-container h2 {
   text-align: center;
-  padding-bottom: 30px;
   font-size: 16px;
 }
+
 .attendance-container {
   overflow-y: scroll;
-  border: 1px solid #CCCCCC;
-  height: 500px;
-  margin: 100px 10px 10px;
+  border: 1px solid #cccccc;
+  max-height: 400px;
+  margin: 23% 10px 10px;
   padding: 20px 0;
   border-radius: 5px;
+  position: relative;
 }
 
-.attendance-container table {
+.attendance-container table thead th:first-of-type {
+  padding-top: 30px;
+}
+
+.attendance-container table,
+.attendance-detail-container table {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
   border-collapse: collapse;
 }
+
 .attendance-container table td,
-.attendance-container table th{
+.attendance-container table th,
+.attendance-detail-container td {
   outline: none;
   border: none;
 }
-.attendance-container table tbody tr:first-of-type{
+
+.attendance-container table tbody tr:first-of-type {
   border-top: 1px solid;
 }
-.attendance-container table tbody tr {
-  border-top: 1px solid #CCCCCC;
 
+.attendance-container table tbody tr,
+.attendance-detail-container tr {
+  border-top: 1px solid #cccccc;
 }
-.attendance-container table td:nth-child(even){
+
+.attendance-container table td:nth-child(even) {
   color: green;
 }
 
-.attendance-detail-container {
-  height: 200px;
-}
-.hover-text{
-  position: relative;
-}
-
-.hover-text:before {
-  content: attr(data-hover);
-  visibility: hidden;
-  opacity: 0;
-  width: 140px;
-  background-color: white;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid #CCCCCC;
-  padding: 7px;
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  z-index: 1;
-  right: -70%;
-  bottom: 110%;
-}
-
-.hover-text:hover:before {
-  opacity: 1;
-  visibility: visible;
-}
 .attendance-container::-webkit-scrollbar {
   width: 12px;
   height: 10px;
@@ -94,4 +94,82 @@
   background: #0090af;
 }
 
+.attendance-detail-container tr:first-of-type {
+  border: none;
+}
 
+.attendance-detail-container {
+  min-height: 75px;
+  max-height: fit-content;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.attendance-detail-container li {
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+}
+
+.attendance-detail-container tr:last-of-type td:first-of-type {
+  vertical-align: top;
+}
+
+.attendance-detail-container td:first-of-type {
+  width: 56.5%;
+}
+
+.hover-text {
+  position: relative;
+}
+
+.hover-text:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  padding: 7px;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  right: -70%;
+  bottom: 110%;
+}
+
+.hover-text:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.attendance-container .comment-details-style summary {
+  position: absolute;
+  list-style: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 1.2rem 0.625rem 0;
+  right: 0;
+  top: 0;
+}
+
+.attendance-container details[open] summary ~ *,
+.attendance-detail-container details[open] summary ~ * {
+  animation: sweep 0.3s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}

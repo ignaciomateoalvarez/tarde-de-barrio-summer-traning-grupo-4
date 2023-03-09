@@ -68,7 +68,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  
+
   # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation, :role)
@@ -82,6 +82,7 @@ class UsersController < ApplicationController
 
   def ensure_frame_response
     return unless Rails.env.development?
+
     redirect_to root_path unless turbo_frame_request?
   end
 

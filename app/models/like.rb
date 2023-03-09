@@ -1,7 +1,7 @@
 class Like < ApplicationRecord
-  belongs_to :comment
+  belongs_to :comment, optional: true
+  belongs_to :post, optional: true
   belongs_to :user
 
-  validates :comment_id, presence: true
   validates :user_id, presence: true
 end
