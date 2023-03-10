@@ -8,10 +8,17 @@ class Student < ApplicationRecord
   validates :active_student, inclusion: { in: [true, false] }
 
   enum school_grade: { Inicial: 0, Primaria: 1, Secundaria: 2 }
+  enum attendance: { presente: 0, ausente: 1, retirado: 2 }
+
+  scope :count_attendance_type, ->(value) { where(attendance: value).count }
 
   def age
     age = (Date.today - birthdate) / 365.25
     age.to_int
+  end
+
+  def self.highlight_post_count
+    Post.where(highlight_post: true).count
   end
 
   private

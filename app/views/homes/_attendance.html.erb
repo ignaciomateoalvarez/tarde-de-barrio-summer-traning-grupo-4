@@ -1,0 +1,33 @@
+<div class="attendance-container">
+  <h2> Asistencia </h2>
+  <details open class= "comment-details-style">
+    <summary></summary>
+      <table>
+        <thead>
+          <th>Alumnado</th>   
+          <th class="hover-text" data-hover="Alumnos presentes">P</th>   
+          <th class="hover-text" data-hover="Alumnos ausentes">A</th>   
+          <th class="hover-text" data-hover="Alumnos retirados">R</th>
+        </thead>
+        <tbody>
+          <% students.each do |student| %>
+            <tr>
+              <td> <%= student.decorate.full_name %></td>
+              <td class='present'
+                data-controller="attendance" data-attendance-url-value="<%= student_change_attendance_path(student.id) %>" data-attendance-type-value='presente'>
+                <input type='radio' name="attendance-<%= student.id %>" <%= "checked" if student.presente? %>  data-action='click->attendance#changeAttendance' id= <%= student.id %>> 
+              </td>
+              <td class='missing' 
+                data-controller="attendance" data-attendance-url-value="<%= student_change_attendance_path(student.id)%>" data-attendance-type-value='ausente'>
+                <input type='radio' name="attendance-<%= student.id %>" <%= "checked" if student.ausente? %> data-action='click->attendance#changeAttendance' id= <%= student.id %>> 
+              </td>
+              <td class='retired'
+                data-controller="attendance" data-attendance-url-value="<%= student_change_attendance_path(student.id)%>" data-attendance-type-value='retirado'>
+                <input type='radio' name="attendance-<%= student.id %>" <%= "checked" if student.retirado? %> data-action='click->attendance#changeAttendance' id= <%= student.id %>> 
+               </td>
+            </tr> 
+          <%end%>
+        </tbody>
+      </table>
+  </details>
+</div>
