@@ -55,6 +55,11 @@ class StudentsController < ApplicationController
     end
   end
 
+  def change_attendance
+    @student = Student.find(params[:student_id])
+    @student.update(attendance: params[:attendance])
+  end
+
   private
 
   def set_student
@@ -62,7 +67,7 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:name, :lastname, :address, :birthdate, :school_grade, :active_student)
+    params.require(:student).permit(:name, :lastname, :address, :birthdate, :school_grade, :active_student, :attendance)
   end
 
   def ensure_frame_response

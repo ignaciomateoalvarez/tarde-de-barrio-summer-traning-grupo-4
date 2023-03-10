@@ -1,7 +1,17 @@
 <div class="home-container">
   <section class="post-section">
-    <div class="date-container">
-      <p> <%= t('home.index.date') %> </p>
+    <div class='home-date-container'>
+      <div>
+        <%= image_tag 'chevron-left.svg' %>
+        <%= image_tag 'chevron-right.svg' %>
+      </div>
+      <div class="date">
+        <div >
+          <p><%= @date %></p>
+          <p><%= @day %></p>
+        </div>
+        <%= image_tag 'arrow_drop_down.svg' %>
+      </div>
     </div>
     <div class='container-comment post-index'>
       <div class='comment-details'>
@@ -34,58 +44,7 @@
     </div>
   </section>
   <section class="attendance-section">
-    <div class="attendance-container">
-      <h2> Asistencia </h2>
-      <details open class= "comment-details-style">
-        <summary></summary>
-          <table>
-            <thead>
-              <th>Alumnado</th>   
-              <th class="hover-text" data-hover="Alumnos presentes">P</th>   
-              <th class="hover-text" data-hover="Alumnos ausentes">A</th>   
-              <th class="hover-text" data-hover="Alumnos retirados">R</th>
-            </thead>
-            <tbody>
-              <% @students.each do |student| %>
-                <tr>
-                  <td><%= student.decorate.full_name %></td>
-                  <td>O</td>
-                  <td>O</td>
-                  <td>O</td>
-                </tr> 
-              <% end %>
-            </tbody>
-          </table>
-      </details>
-    </div>
-    <div class="attendance-detail-container">
-      <details open class= "comment-details-style">
-        <summary></summary>
-          <table>
-            <tbody>
-                <tr>
-                  <td>Asistencia</td>
-                  <td>O</td>
-                  <td>O</td>
-                  <td>O</td>
-                </tr>
-                 <tr>
-                  <td>Destacado</td>
-                  <td>O</td>
-                </tr> 
-                 <tr>
-                  <td>Equipo</td>
-                  <td>
-                    <ul>
-                      <li>Pepito</li>
-                      <li>Maia</li>
-                      <li>Drako</li>
-                    </ul>
-                  </td>
-                </tr>  
-            </tbody>
-          </table>
-      </details>
-    </div>
+    <%= render partial: 'attendance', locals: { students: @students } %>
+    <%= render partial: 'summary_attendance'  %>
   </section>
 </div>

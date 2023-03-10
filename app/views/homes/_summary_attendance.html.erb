@@ -1,0 +1,29 @@
+<div class="attendance-detail-container">
+  <details open class= "comment-details-style">
+    <summary></summary>
+      <table>
+        <tbody>
+          <tr>
+            <td>Asistencia</td>
+            <td><%= Student.count_attendance_type('presente') %></td>
+            <td><%= Student.count_attendance_type('ausente') %></td>
+            <td><%= Student.count_attendance_type('retirado') %></td>
+          </tr>
+          <tr>
+            <td>Destacado</td>
+            <td> <%= Student.highlight_post_count %> </td>
+          </tr> 
+          <tr>
+            <td>Equipo</td>
+            <td>
+              <ul>
+                <li>Pepito</li>
+                <li>Maia</li>
+                <li>Drako</li>
+              </ul>
+            </td>
+          </tr>  
+        </tbody>
+      </table>
+  </details>
+</div>

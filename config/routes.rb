@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :students do
+    put 'change_attendance', to: 'students#change_attendance'
     resources :likes, only: [:destroy]
     resources :comments, only: [:create] do
       resources :sub_comments, only: [:create]
